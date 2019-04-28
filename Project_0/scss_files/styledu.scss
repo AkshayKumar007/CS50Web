@@ -1,0 +1,34 @@
+.rest{
+    padding: 30px;
+}
+@media only screen and (max-width: 600px) {
+        body {
+            background-color: lightblue;
+        }
+}
+%certificate{
+    background-color: #99ffcc;
+    padding: 20px;
+    border: 2px solid ;
+    border-radius: 30px;
+}
+
+.nptel{
+    @extend %certificate;
+    border-color: #9900cc;
+    // border-width: 10px;
+}
+.dbms{
+    @extend %certificate;
+    border-color: #8000ff;
+}
+
+.math{
+    @extend %certificate;
+    border-color: #0000ff;
+}
+
+.time{
+    @extend %certificate;
+    border-color: #3399ff;
+}

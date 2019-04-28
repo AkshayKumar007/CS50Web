@@ -1,0 +1,33 @@
+.rest {
+  padding: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+.time, .math, .dbms, .nptel {
+  background-color: #99ffcc;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 30px;
+}
+
+.nptel {
+  border-color: #9900cc;
+}
+
+.dbms {
+  border-color: #8000ff;
+}
+
+.math {
+  border-color: #0000ff;
+}
+
+.time {
+  border-color: #3399ff;
+}
+
+/*# sourceMappingURL=stylEdu.css.map */
