@@ -6,7 +6,7 @@ In Project 0, I have created 4 html files.
 1. My Resume
 2. My Eduation and Certifications
 3. My book recommendations
-4. my Travel recommendations (if you visit India)
+4. My Travel recommendations (if you visit India)
 
 It is possible to move around from on page to another.
 The opening page should be "my resume", in which i have provided links which are embedded in headers and buttons to move to other pages.
