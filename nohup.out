@@ -1,0 +1,8 @@
+Using PPAPI flash.
+[3569:3569:0428/145205.238512:ERROR:sandbox_linux.cc(364)] InitializeSandbox() called with multiple threads in process gpu-process.
+** Message: 14:52:12.218: Remote error from secret service: org.freedesktop.Secret.Error.IsLocked: Cannot create an item in a locked collection
+** Message: 14:52:13.466: Remote error from secret service: org.freedesktop.Secret.Error.IsLocked: Cannot create an item in a locked collection
+** Message: 14:52:15.316: Remote error from secret service: org.freedesktop.Secret.Error.IsLocked: Cannot create an item in a locked collection
+Using PPAPI flash.
+Opening in existing browser session.
+[3523:3523:0428/145357.307802:ERROR:textfield.cc(1768)] Not implemented reached in virtual bool views::Textfield::ShouldDoLearning()
