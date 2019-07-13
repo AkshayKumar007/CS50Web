@@ -3,13 +3,9 @@
   color: white;
 }
 
-body {
-  padding-top: 110px;
-}
-
 #Left_section {
-  background-color: #80ccff;
-  padding: 50px;
+  background-color: #99ccff;
+  padding: 30px;
 }
 #Left_section h3 {
   font-weight: bold;
@@ -18,7 +14,7 @@ body {
 }
 
 #Right_section {
-  padding: 50px;
+  padding: 30px;
 }
 
 .col-md-6 {
@@ -26,7 +22,7 @@ body {
   text-align: center;
 }
 
-.Bio {
+.topBand {
   padding: 20px;
 }
 
@@ -39,12 +35,24 @@ p {
   text-align: left;
 }
 
+#Left_section > h3 {
+  font-weight: bold;
+  color: #666666;
+  text-align: left;
+}
+
 #Dual_sheet h2 {
   font-weight: bold;
 }
 
 button {
   font-size: 30px;
+}
+
+.Contacts {
+  padding: 20px;
+  background-color: #4d4d4d;
+  color: white;
 }
 
 /*# sourceMappingURL=styl1.css.map */
