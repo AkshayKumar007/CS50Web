@@ -7,12 +7,3 @@
 ##### Project 0
 ----------------------------------
 
--Project consisits of 4 webpages.
-
--The first webpage is my one-page Resume(with embeded link for other pages), the second one is my Education Details and Achievments, the last two are my recommendations for books and places to visit in India.
-
--I have tried to make all pages Mobile responsive.
-
-*Hope it fulfills all the requirments of the Project. Thanks*	:smile:
-
-

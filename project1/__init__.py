@@ -2,7 +2,7 @@
 import os
 import requests
 
-from flask import Flask, session, render_template, request, jsonify
+from flask import Flask, session, render_template, request, jsonify, redirect, url_for
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -25,7 +25,10 @@ db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("index.html")
 
 
 @app.route("/register", methods=["GET","POST"])
@@ -136,4 +139,8 @@ def flight_api(isbn):
     rev_cnt = r1["books"][0]["work_ratings_count"]
     return jsonify({"title": book.title, "author": book.author, "year": book.year, "isbn": isbn, "review_count": avg_rev, "average_score": rev_cnt})
 
-    # AND review = :revw 
+@app.route('/logout')
+def logout():
+   # remove the username from the session if it is there
+   session.pop('username', None)
+   return redirect(url_for('index'))
