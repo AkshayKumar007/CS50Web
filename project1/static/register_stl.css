@@ -1,0 +1,34 @@
+body {
+  background-image: url("images/man-reading-a-book.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+  padding: 30px;
+  height: 100%; }
+
+#bocx {
+  background-color: rgba(0, 153, 153, 0.377);
+  padding: 30px; }
+
+#heading {
+  font-weight: bolder;
+  color: #FF7F7F;
+  background-color: rgba(0, 153, 153, 0.788); }
+
+button {
+  font-size: 30px; }
+
+#sub_heading {
+  color: white;
+  font-style: italic;
+  font-weight: bolder;
+  background-color: rgba(0, 153, 153, 0.377); }
+
+label {
+  color: black;
+  font-weight: bold; }
+
+.col-md-2 {
+  background-color: rgba(0, 153, 153, 0.377); }
+
+/*# sourceMappingURL=register_stl.css.map */

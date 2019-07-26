@@ -1,0 +1,17 @@
+body {
+  padding: 30px;
+  background-image: url("images/books_library_shelves.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+  padding: 30px;
+  height: 100%; }
+
+#heading {
+  color: #ff6600; }
+
+#sub_heading {
+  color: #00ff99;
+  font-style: italic; }
+
+/*# sourceMappingURL=search_stl.css.map */

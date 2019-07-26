@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block title %} 
+    Review Worm : {{btitle}}
+{% endblock title %}
+
+{% block style %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='review_stl.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div id="title_book">
+        <h1>{{ btitle }}</h1>
+    </div>
+    <div class="row" id="review">
+        <div class="col-md-4">
+            <h4> Author : {{ author }} </h4>
+        </div>
+
+        <div class="col-md-4">
+            <h4> Year : {{ year }} </h4>
+        </div>
+
+        <div class="col-md-4">
+            <h4> ISBN : {{ isbn }} </h4>
+        </div>      
+    </div>
+
+    <div class="row" id="review">
+        <div class="col-md-3">
+            <h4> Average rating: {{ avg }} </h4>
+        </div>
+
+        <div class="col-md-3">
+            <h4> No. of Reviews: {{ count }} </h4>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row" id="review">
+        <div class="col-md-3"><br></div>
+        <div class="col-md-6">
+            <div class="col-md-6" id="bocx">
+                <form action="{{ url_for('review', book_id=id) }}" method="POST">
+                    <div class="form-group">
+                        <label for="rate">Rating out of 5:</label>
+                        <select class="form-control" name="rate">
+                            {% for star in stars %}
+                                <option value="{{ star }}">{{ star }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="revw">Your Review</label>
+                        <input type="text" name="revw" placeholder="Type your review">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit Review</button>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"><br></div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-3"><br></div>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>                            
+                    <th scope="col">User:</th>
+                    <th scope="col">Rating:</th>
+                    <th scope="col">Review:</th>
+                </tr>
+            </thead>  
+            <tbody>
+                <tr>                           
+                    {% for r in result %}
+                        <td> {{ r.user_name }} </td>
+                        <td> {{ r.rating }} </td>
+                        <td> {{ r.review }} </td>
+                    {% endfor %}
+                </tr>
+            </tbody>          
+        </table>
+    </div>
+{% endblock body %}

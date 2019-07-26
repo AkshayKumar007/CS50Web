@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}
+    Review Worm : Login 
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_stl.css') }}">
+{% endblock style %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12"><br></div>        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"><br></div>        
+    </div>
+
+    <div class="row" id="heading">
+        <h1> Review Worm </h1>
+    </div>
+    <div class="row" id="sub_heading">
+        <h4> A book review website. </h4>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="bocx">
+            <form action="{{ url_for('search') }}" method="POST">
+                <label for="name">Username</label>
+                <input type="text" name="name" placeholder="Enter Username"><br><br>
+                <label for="passwd">Password</label>
+                <input type="password" name="passwd" placeholder="Enter Password"><!--key = PASSWD--><br>
+                <button class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <br>        
+        <div class="col-md-2"></div>
+    </div>   
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="bocx2">
+            <p> New to Book Worm? <a href="{{ url_for('register') }}"> Register Now! </a> </p>
+        </div> 
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-12"></div>        
+    </div>
+
+{% endblock body %}

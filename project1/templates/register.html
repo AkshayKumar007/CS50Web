@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}
+    Review Worm : Register 
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='register_stl.css') }}">
+{% endblock style %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12"><br></div>        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"><br></div>        
+    </div>
+
+    <div class="row" id="heading">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+            <h1> Review Worm </h1> 
+        </div>                    
+    </div>
+    <div class="row" id="sub_heading">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+            <h4> A book review website. </h4> 
+        </div> 
+        <div class="col-md-1"></div> 
+        <div class="col-md-1"></div>    
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="bocx">
+            <form action="{{url_for('register')}}" method="POST"><!--May have to change 'search' to 'index'-->
+                <label for="fname">Full Name</label>
+                <input type="text" name="fname" placeholder="Enter Full Name"><br><br>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" placeholder="Enter email"><br><br>
+                <label for="usname">Username</label>
+                <input type="text" name="uname" placeholder="Enter Username"><br><br>
+                <label for="passwd">Password</label>
+                <input type="password" name="passwd" placeholder="Enter Password"><br><br><!--key = PASSWD-->
+                <button class="btn btn-primary">Register</button>
+            </form>
+        </div>
+        <br>
+        <div class="col-md-2"><br></div>
+    </div>   
+    <div class="row">
+            <div class="col-md-12"><br></div>        
+    </div>
+
+{% endblock body %}

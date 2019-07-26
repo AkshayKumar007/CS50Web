@@ -1,0 +1,53 @@
+$pad : 30px;
+
+body {
+    background-image: url("images/man-reading-a-book.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    // background-position: center;
+    background-size: cover;
+    padding: $pad;
+    height: 100%;
+} 
+#bocx{
+
+    background-color:rgba(0, 153, 153, 0.377);
+    padding: $pad;
+
+    // h3 {                   // nesting
+    //     font-weight:bold; 
+    //     color: #666666; 
+    //     text-align:left;
+    // }
+}
+#heading {
+    font-weight: bolder;
+    color: #FF7F7F;
+    background-color:rgba(0, 153, 153, 0.788);
+}
+
+
+// #Left_section > h3{
+//     font-weight:bold; 
+//     color: #666666; 
+//     text-align:left;
+// }
+
+button {
+    font-size: 30px;
+}
+
+#sub_heading {
+    color:white;
+    font-style: italic;
+    font-weight: bolder;
+    background-color:rgba(0, 153, 153, 0.377);
+}
+
+label{
+    color:black;
+    font-weight: bold;
+}
+.col-md-2{
+    background-color:rgba(0, 153, 153, 0.377);
+}
