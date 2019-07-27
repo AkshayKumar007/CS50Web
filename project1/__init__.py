@@ -25,9 +25,6 @@ db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def index():
-    if request.method == "POST":
-        pass
-    else:
         return render_template("index.html")
 
 
