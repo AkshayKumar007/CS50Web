@@ -95,7 +95,11 @@
                             <td> {{ r.rating }} </td>
                             <td> {{ r.review }} </td>
                         </tr>
-                        {% endfor %}                    
+                        { % else %}   
+                        <tr>
+                            <td> No Reviews </td> 
+                        </tr>
+                        {% endfor %}                 
                 </tbody>          
             </table>
         </div>
