@@ -88,14 +88,14 @@
                         <th scope="col">Review:</th>
                     </tr>
                 </thead>  
-                <tbody>
-                    <tr>                           
+                <tbody>                           
                         {% for r in result %}
+                        <tr>
                             <td> {{ r.user_name }} </td>
                             <td> {{ r.rating }} </td>
                             <td> {{ r.review }} </td>
-                        {% endfor %}
-                    </tr>
+                        </tr>
+                        {% endfor %}                    
                 </tbody>          
             </table>
         </div>
