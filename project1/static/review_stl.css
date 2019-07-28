@@ -1,0 +1,13 @@
+.body {
+  padding: 30px;
+  background-color: white; }
+
+#title_book > h1 {
+  color: #ff6600;
+  font-weight: bold; }
+
+#review {
+  padding: 20px;
+  background-color: rgba(51, 153, 255, 0.411); }
+
+/*# sourceMappingURL=review_stl.css.map */

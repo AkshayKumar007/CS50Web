@@ -1,0 +1,53 @@
+$pad : 30px;
+
+body {
+    background-image: url("images/books_library_shelves.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    // background-position: center;
+    background-size: cover;
+    padding: $pad;
+    height: 100%;
+} 
+#bocx{
+
+    background-color:rgba(230, 148, 41, 0.705);
+    padding: $pad;
+
+    // h3 {                   // nesting
+    //     font-weight:bold; 
+    //     color: #666666; 
+    //     text-align:left;
+    // }
+}
+#heading {
+    font-weight: bolder;
+    color: white;
+}
+#bocx2{
+
+    background-color:rgba(230, 148, 41, 0.801);
+    padding: $pad;
+}
+
+p {
+    font-size: 16px;
+    text-align: left;
+    color:block;
+    font-weight: bolder;
+}
+
+// #Left_section > h3{
+//     font-weight:bold; 
+//     color: #666666; 
+//     text-align:left;
+// }
+
+button {
+    font-size: 30px;
+}
+
+#sub_heading > h4{
+    color:#00ff99;
+    font-style: italic;
+}

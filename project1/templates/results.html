@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+{% block title %}
+    Review Worm : Results
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='results_stl.css') }}">
+{% endblock style %}
+
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Review Worm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{ url_for('logout') }}" method="POST"> Logout <span class="sr-only">(current)</span></a>
+          </div>
+        </div>
+    </nav>
+    <div class="body">
+        {% if res2 is none %}
+
+        <div class="row">
+            <div class="col-md-2"><br></div> 
+                <div class="col-md-8"><!--ID == PANEL-->
+                    <h2> Here's what we have found: </h2>
+                </div>
+            <div class="col-md-2"><br></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"><br></div>
+            <div class="col-md-6">
+                <br>
+                <table class="table table-striped"><!--  -->
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Review book</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        {% for res in res1 %}
+                            <tr>
+                                <th scope="row"> {{ res.title }} </th>
+                                <td> {{ res.author }} </td>
+                                <td> {{ res.year }} </td>
+                                <td> {{ res.isbn }} </td>
+                                <td> <a href="{{ url_for('review', book_id=res.id) }}">
+                                        <button type="button" class="btn btn-secondary"> Review </button>
+                                     </a>
+                                </td> 
+                            </tr>                               
+                        {% endfor %}                        
+                    </tbody>
+                  </table>     
+            </div>            
+            <div class="col-md-3"><br></div>
+        </div>
+    {% elif res1 is none and res2 is none %}
+        <div class="row">
+            <div class="col-md-3"><br></div> 
+                <div class="col-md-6" id="panell"><!--ID == PANEL-->
+                    <h2> Sorry! No Results. </h2>
+                </div>
+            <div class="col-md-3"><br></div>
+        </div>
+        
+    {% else %}
+        <div class="row">
+            <div class="col-md-3"><br></div> 
+                <div class="col-md-6" id="panell">
+                    <h2> Here's what we have found: </h2>
+                </div>
+            <div class="col-md-3"><br></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"><p></p></div>
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Review book</th>
+                        </tr>
+                    </thead>  
+                    <tbody>
+                        {% for res in res1 %}
+                            <tr>
+                                <th scope="row"> {{ res.title }} </th><!--We need to add link to return to review method-->
+                                <td> {{ res.author }} </td>
+                                <td> {{ res.year }} </td>
+                                <td> {{ res.isbn }} </td>
+                                <td> <a href="{{ url_for('review', book_id=res.id) }}">
+                                        <button type="button" class="btn btn-secondary"> Review </button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}                        
+                        
+                        {% for res in res2 %}
+                            <tr>
+                                <th scope="row"> {{ res.title }} </th>
+                                <td> {{ res.author }} </td>
+                                <td> {{ res.year }} </td>
+                                <td> {{ res.isbn }} </td>
+                                <td> <a href="{{ url_for('review', book_id=res.id) }}">
+                                        <button type="button" class="btn btn-secondary"> Review </button>
+                                     </a>
+                                </td>     
+                            </tr>                           
+                        {% endfor %}
+                    </tbody>          
+                </table>    
+            </div> 
+            <div class="col-md-3"><p></p></div>      
+        </div>
+    {% endif %}
+    </div>
+{% endblock body %}
