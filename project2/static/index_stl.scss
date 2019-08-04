@@ -1,0 +1,46 @@
+
+.fill {
+    position: relative;
+    margin-top: 35px;
+  }
+  
+input {
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 0;
+}
+
+label {
+    position: absolute;
+    font-weight: 600;
+    color: #777777;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    cursor: text;
+    user-select: none;
+    transition: 0.15s ease-in-out;
+}
+  
+input[data-empty="false"] + label,
+input:valid + label,
+input:focus + label {
+    top: -10px;
+    left: 0px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.seperable {
+    padding: 20px;
+}
+
+#0f9d58
+#54b948
+#55ab55
+#34a853

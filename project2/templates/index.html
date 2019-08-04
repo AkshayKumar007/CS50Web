@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %} Flack {% block title %}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='index_stl.css') }}"> {% endblock %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Flack</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{ url_for('register') }}" method="POST"> Register <span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+</nav>
+{% block body %}
+<div class="row">
+    <div class="col-md-6"><!--main login window-->
+        <form action="{{url_for('channel_list')}}" method="POST">
+            <div class="fill">
+                <label for="dname">Display Name:</label>
+                <input name="dname" type="text" placeholder="Display Name">
+                <label for="email">Email: </label>
+                <input type="email" name="email" placeholder="email">
+                <label for="passwd">Password: </label>
+                <input  type="password" name="paswd" placeholder="Password">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 seperable">        
+        <img src="/images/xyz.jpeg">
+    </div>
+</div>
+{% endblock %}
+
+$('.form-js-label').find('input').on('input', function (e) {
+    $(e.currentTarget).attr('data-empty', !e.currentTarget.value);
+  });
