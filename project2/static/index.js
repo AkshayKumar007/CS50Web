@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#message > .alert').innerHTML = contents;
             }   
 
-        }
-        
+        }       
 
     }
 });

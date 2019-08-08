@@ -57,7 +57,7 @@ def register():
             # add js code for user already exists
 
 
-@app.route("/channel_list", method = ["GET", "POST"])
+@app.route("/channel_list", methods = ["GET", "POST"])
 def channel_list():
     if request.method == "POST":
         email = request.form.get("email")
@@ -86,6 +86,7 @@ def create_channel():
                 channel[cname] = []
             return render_template("channel_list.html", Channel = channel.keys())
 
+
 @app.route("/channel/<string>:c", methods=["GET", "POST"])
 def channel(c):
     if request.method == "GET":
@@ -99,6 +100,7 @@ def channel(c):
         #update channel content using sockets
         channel[c].append((message, uname, time))
         
+
 @socketio.on("send message")
 def vote(data):
     # selection = data["selection"]
