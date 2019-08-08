@@ -4,6 +4,10 @@
     Error 
 {% endblock title %}
 
+{% block style %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='error_stl.css') }}">
+{% endblock %}
+
 {% block body %} 
     <h2> Error! </h2>
     <p> {{ message }} </p>

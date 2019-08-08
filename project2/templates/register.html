@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %} Flack : Register {% endblock %}
+{% block style %} 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register_stl.css') }}">
+    <script type="text/javascript"{{url_for('static',filename='register.js')}}></script>
+    <!-- <script type="text/javascript">
+        myVar = message({{vars|tojson}})
+    </script> -->
+
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-1">
+            <br>
+        </div>
+        <div class="col-md-10">
+            <h1>Flack</h1>
+            <h4> Flack is a platform that combines workplace chat, meetings, notes, and attachments. Let's get started!</h4>
+        </div>
+        <div class="col-md-1">
+            <br>
+        </div>
+    </div>
+    <div class="row" id="result">
+        <div class="alert alert-primary" role="alert">
+            <!--error message will appear here-->
+            <!-- Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken. -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <br>
+        </div>
+        <div class="col-md-8" id="bocx">
+            <h2> Register </h2>
+            <br>
+            <form id="form"><!--May have to change 'search' to 'index'-->
+                <!-- <form action="{{url_for('register')}}" method="POST"> -->
+                <label for="fname">Full Name</label>
+                <input id="fname" type="text" name="fname" placeholder="Enter Full Name"><br><br>
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" placeholder="Enter email"><br><br>
+                <label for="dname">Username</label>
+                <input id="dname" type="text" name="dname" placeholder="Enter Username"><br><br>
+                <label for="passwd">Password</label>
+                <input id="passwd" type="password" name="passwd" placeholder="Enter Password"><br><br><!--key = PASSWD-->
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="col-md-2">
+            <br>
+        </div>
+
+    </div>
+{% endblock %}
+
+<!-- <div class="alert alert-primary" role="alert">
+    Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken.
+</div> -->
