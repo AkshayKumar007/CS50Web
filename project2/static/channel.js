@@ -6,19 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // When connected, configure buttons
     socket.on('connect', () => {
 
-        // Each button should emit a "submit vote" event
-        document.querySelectorAll('button').forEach(button => {
-            button.onclick = () => {
-                const selection = button.dataset.vote;
-                socket.emit('submit vote', {'selection': selection});
-            };
-        });
+        document.querySelector('#form').onsubmit = () => {
+                const message = document.querySelector('#messge').value;
+                socket.emit('send message', {'selection': message});            
+        }
     });
 
     // When a new vote is announced, add to the unordered list
-    socket.on('announce vote', data => {
-        const li = document.createElement('li');
-        li.innerHTML = `Vote recorded: ${data.selection}`;
-        document.querySelector('#votes').append(li);
+    socket.on('announce message', data => {
+        const div = document.createElement('div');
+        div.innerHTML = `${data.selection.uname} ${data.selection.message} ${data.selection.message}`;
+        document.querySelector('#push').append(div);
     });
 });
+// `Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">email</a> is already taken.`

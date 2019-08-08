@@ -98,12 +98,15 @@ def channel(c):
         time = datetime.now()
         #update channel content using sockets
         channel[c].append((message, uname, time))
-        return render_template()
         
-@socketio.on("submit vote")
+@socketio.on("send message")
 def vote(data):
-    selection = data["selection"]
-    emit("announce vote", {"selection": selection}, broadcast=True)
+    # selection = data["selection"]
+    message = data["selection"]
+    uname = session["username"]
+    time = datetime.now()
+    selection = {"message":message, "uname": uname, "time":time}
+    emit("announce message", {"selection": selection}, broadcast=True)
 
 
 @app.route('/logout')

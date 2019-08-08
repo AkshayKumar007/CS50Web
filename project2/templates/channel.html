@@ -21,7 +21,25 @@
     <div class="row">
         <div class="col-md-2 side-panel"><p></p></div>
         <div class="col-md-8">
-            {% for c in  %}
+            <div>
+                {% for c in Channel %}
+                    {{ c[0] }}<br>
+                    {{ c[1] }}<br>
+                    {{ c[2] }}
+                {% else %}
+                    <p>No messages</p>
+                {% endfor %}
+            </div> 
+            <div id="push">
+                <!--filled by socket.io-->
+            </div>
+            <div>
+                <form id="form" action="{{url_for('results')}}" method="POST">
+                    <label for="message">Message:</label>
+                    <input id="message" type="text" name="message">
+                    <input type="submit" value="Create">
+                 </form>
+            </div>           
         </div>
         <div class="col-md-2 side-panel"><p></p></div>
     </div>
