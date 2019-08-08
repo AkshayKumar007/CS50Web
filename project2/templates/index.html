@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 {% block title %} Flack {% block title %}
-{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='index_stl.css') }}"> {% endblock %}
+{% block style %} 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script rel="stylesheet" href="{{ url_for('static', filename='index_stl.css') }}"></script>
+{% endblock %}
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Flack</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,16 +16,20 @@
     </div>
 </nav>
 {% block body %}
-<div class="row">
+<div class="row form-group">
     <div class="col-md-6"><!--main login window-->
-        <form action="{{url_for('channel_list')}}" method="POST">
-            <div class="fill">
-                <label for="dname">Display Name:</label>
-                <input name="dname" type="text" placeholder="Display Name">
+        <div id="message">
+            <div class="alert alert-primary" role="alert">
+                <!--filled by JS-->
+            </div>
+        </div>
+        <form id="form">
+            <div class="fill"><!--for my own styling-->
                 <label for="email">Email: </label>
-                <input type="email" name="email" placeholder="email">
+                <input id="email" type="email" name="email" placeholder="email">
                 <label for="passwd">Password: </label>
-                <input  type="password" name="paswd" placeholder="Password">
+                <input id="passwd" type="password" name="paswd" placeholder="Password">
+                <input type="submit" value="Submit"><!--change for JS-->
             </div>
         </form>
     </div>
