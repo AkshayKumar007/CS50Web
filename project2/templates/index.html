@@ -1,23 +1,25 @@
 {% extends "layout.html" %}
-{% block title %} Flack {% block title %}
+{% block title %} Flack {% endblock %}
 {% block style %} 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <script rel="stylesheet" href="{{ url_for('static', filename='index_stl.css') }}"></script>
 {% endblock %}
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Flack</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="{{ url_for('register') }}" method="POST"> Register <span class="sr-only">(current)</span></a>
-      </div>
-    </div>
-</nav>
+
 {% block body %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Flack</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{ url_for('register') }}" method="POST"> Register <span class="sr-only">(current)</span></a>
+          </div>
+        </div>
+    </nav>
+    <br><br><br>
 <div class="row form-group">
-    <div class="col-md-6"><!--main login window-->
+    <div class="col-md-6">
         <div id="message">
             <div class="alert alert-primary" role="alert">
                 <!--filled by JS-->
@@ -29,16 +31,16 @@
                 <input id="email" type="email" name="email" placeholder="email">
                 <label for="passwd">Password: </label>
                 <input id="passwd" type="password" name="paswd" placeholder="Password">
-                <input type="submit" value="Submit"><!--change for JS-->
+                <input type="submit" value="Submit">
             </div>
         </form>
     </div>
     <div class="col-md-6 seperable">        
-        <img src="/images/xyz.jpeg">
+        <img src="static/images/ShivaBaba.jpg">
     </div>
 </div>
 {% endblock %}
-
-$('.form-js-label').find('input').on('input', function (e) {
+<!--add in js file later-->
+<!-- $('.form-js-label').find('input').on('input', function (e) {
     $(e.currentTarget).attr('data-empty', !e.currentTarget.value);
-  });
+  }); -->

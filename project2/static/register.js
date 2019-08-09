@@ -21,13 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#result > .alert').innerHTML = contents;
             }
         }
-
-        // still incomplete
         const data = new FormData();
-        data.append('fname', fname);//change for variables you created
-        data.append('dname', fname);
-        data.append('email', fname);
-        data.append('passwd', fname);
+        data.append('fname', fname); //change for variables you created
+        data.append('dname', dname);
+        data.append('email', email);
+        data.append('passwd', passwd);
         // Send request
         request.send(data);
         return false;

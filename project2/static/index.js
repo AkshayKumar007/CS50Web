@@ -12,10 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = JSON.parse(request.responseText);
             if (data.message == "wrong") {
                 const contents = "Error! Check e-mail or password."
-                document.querySelector('#message > .alert').innerHTML = contents;
+                document.querySelector('.alert').innerHTML = contents;
             }   
 
-        }       
+        }   
+        
+        const data = new FormData();
+
+        data.append('email', email);
+        data.append('passwd', passwd);
+        // Send request
+        request.send(data);
+        return false;
 
     }
 });

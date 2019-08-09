@@ -1,4 +1,4 @@
-import os, requests, datetime
+import os, requests, datetime, threading
 
 from flask import Flask, render_template, request, session, url_for, redirect, jsonify
 from flask_session import Session
@@ -25,13 +25,11 @@ db = scoped_session(sessionmaker(bind=engine))
 
 
 channel = dict() # to store channels and respective messages
-# 'C'hannel for passing to html(s)
+# 'C'hannel for passing to DOMs
 
 @app.route("/")
 def index():
-    # if request.method == "GET":
     return render_template("index.html")
-    # elif request.method == "POST":
 
 
 @app.route("/register", methods = ["GET", "POST"])
@@ -44,9 +42,9 @@ def register():
         dname = request.form.get("dname")
         passwd = request.form.get("passwd")
         email = request.form.get("email")
-        if db.execute("SELECT * FROM users WHERE email = :email",{"email":email}).count == 0:
-            if db.execute("SELECT * FROM users WHERE dname = :dname",{"dname":dname}).count == 0:
-                db.execute("INSERT INTO users (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
+        if db.execute("SELECT * FROM users1 WHERE email = :email",{"email":email}).rowcount == 0:
+            if db.execute("SELECT * FROM users1 WHERE dname = :dname",{"dname":dname}).rowcount == 0:
+                db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
                     ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
                 return render_template("channel_list.html", dname = dname)
             else:
@@ -62,8 +60,8 @@ def channel_list():
     if request.method == "POST":
         email = request.form.get("email")
         passwd = request.form.get("passwd")
-        if db.execute("SELECT * FROM users WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).count == 1:
-            dname = db.execute("SELECT dname FROM users WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
+        if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
+            dname = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
             session[username] = dname
             return render_template("channel_list.html", Channel = channel.keys())
         else:
@@ -117,7 +115,8 @@ def logout():
    session.pop('username', None)
    return redirect(url_for('index'))
 
-
+if __name__ == "__main__":
+    threading.Thread(target=app.run).start()
 # channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            
 
 #  channel _list alpha
