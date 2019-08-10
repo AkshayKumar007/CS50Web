@@ -115,8 +115,9 @@ def logout():
    session.pop('username', None)
    return redirect(url_for('index'))
 
-if __name__ == "__main__":
-    threading.Thread(target=app.run).start()
+# if __name__ == "__main__":
+#     threading.Thread(target=app.run).start()
+
 # channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            
 
 #  channel _list alpha

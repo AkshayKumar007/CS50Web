@@ -1,0 +1,37 @@
+.body {
+  margin-top: 30px;
+  padding: 30px;
+  color: #0f9d58;
+  color: #54b948;
+  color: #55ab55;
+  color: #34a853;
+  color: #075e54;
+  color: #128c7e;
+  color: #dcf8c6;
+  color: #25d366; }
+
+.body > image {
+  float: right; }
+
+.seperable > h2 {
+  display: inline-block; }
+
+.seperable > h5 {
+  color: #505050; }
+
+.seperable > h1 {
+  display: inline-block;
+  color: #0f9d58;
+  font-weight: bolder; }
+
+.loginBocx {
+  padding: 33px;
+  background-color: #dcf8c6;
+  border-radius: 30px;
+  color: #34a853;
+  font-weight: bold; }
+
+.footer {
+  background-color: #55ab55; }
+
+/*# sourceMappingURL=index_stl.css.map */

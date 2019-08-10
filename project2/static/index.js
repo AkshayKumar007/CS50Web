@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  
     document.querySelector('#form').onsubmit = () => {
 
         const request = new XMLHttpRequest();
@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         request.onload = () => {
             const data = JSON.parse(request.responseText);
             if (data.message == "wrong") {
-                const contents = "Error! Check e-mail or password."
-                document.querySelector('.alert').innerHTML = contents;
+                const contents = '<div class="alert alert-primary" role="alert">Error! Check e-mail or password.</div>';
+                document.querySelector('#message').innerHTML = contents;
             }   
 
         }   
