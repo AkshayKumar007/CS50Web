@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.message == "no_mail") {// check for white-spacing of curly braces
                 const contents = `Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">email</a> is already taken.`
-                document.querySelector('#result > alert').innerHTML = contents;
+                document.querySelector('#message').innerHTML = contents;
             }
             else if (data.message == "no_dname"){
                 const contents = `Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken.`
@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     }
 });
+
+<div class="alert alert-primary" role="alert">
+                    <!--error message will appear here-->
+                    <!-- Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken. -->
+                </div>
 
 // function message(vars) {
     

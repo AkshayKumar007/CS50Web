@@ -1,23 +1,22 @@
 .body {
   margin-top: 30px;
-  padding: 30px;
-  color: #25d366; }
+  padding: 30px; }
 
 .body > image {
   float: right; }
 
-.seperable > h2 {
-  display: inline-block; }
-
-.seperable > h5 {
-  color: #505050; }
-
-.seperable > h1 {
+.separable > h1 {
   display: inline-block;
   color: #0f9d58;
   font-weight: bolder; }
 
-.loginBocx {
+.separable > h2 {
+  display: inline-block; }
+
+.separable > h5 {
+  color: #505050; }
+
+.registerBocx {
   padding: 33px;
   background-color: #dcf8c6;
   border-radius: 30px;
@@ -27,4 +26,4 @@
 .footer {
   background-color: #55ab55; }
 
-/*# sourceMappingURL=index_stl.css.map */
+/*# sourceMappingURL=register_stl.css.map */

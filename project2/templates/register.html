@@ -7,7 +7,7 @@
 
 {% endblock %}
 {% block body %}
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #0f9d58;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9d58;">
         <a class="navbar-brand" href="#" style="color: white; font-weight: bolder;">FLACK.</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span> 
@@ -24,26 +24,25 @@
     <!--rest content-->
     <div class="row">
         <div class="col-md-12"><br></div>        
-    </div>        
-    <div class="row">
-        <div class="col-md-12"><br></div>        
-    </div>
+    </div>  
     <div class="body">
         <div class="row">
             <div class="col-md-2">
-                <br>
+                <p></p>
             </div>
-            <div class="col-md-8">
-                <h1>Welcome to Flack!</h1><br>
-                <h4> Flack is a platform that combines workplace chat, meetings, notes, and attachments.</h4>
-                <h4>Let's get started!</h4>
+            <div class="col-md-8 separable">
+                <h2>Welcome to </h2>
+                <h1>&#160Flack. </h1>
+                <h2>!</h2>
+                <h5> Flack is a platform that combines workplace chat, meetings, notes, and attachments.</h5>
+                <h5>Let's get started!</h5>
             </div>
             <div class="col-md-2">
-                 <br>
+                 <p></p>
             </div>
         </div>
         
-        <div class="row" id="result">
+        <div class="row">
             <div class="col-md-2"><br></div>
             <div class="col-md-8 " id="message"><!--put in js file-->
                 
@@ -54,38 +53,40 @@
             <div class="col-md-2">
                 <br>
             </div>
-            <div class="col-md-8">
-                <div class="alert alert-primary" role="alert">
-                    <!--error message will appear here-->
-                    <!-- Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken. -->
-                </div>
+            <div class="col-md-3">
                 <br><br>
+                <div id="message">
+                    <!--filled by JS-->
+                </div>
                 <div class="registerBocx">
-                    <h2> Register </h2>
-                    <form id="form" action="{{url_for('register')}}" method="POST"><!--May have to change 'search' to 'index'-->
+                    <h2> Register </h2><br>
+                    <form id="form"><!--May have to change 'search' to 'index'-->
                         <!-- <form action="{{url_for('register')}}" method="POST"> -->
                         <label for="fname">Full Name:</label><br>
-                        <input id="fname" type="text" name="fname" placeholder="Enter Full Name"><br><br>
+                        <input id="fname" type="text" name="fname" placeholder="Enter Full Name" autocomplete="off" required=""><br><br>
                         <label for="email">e-mail:</label><br>
-                        <input id="email" type="email" name="email" placeholder="Enter email"><br><br>
+                        <input id="email" type="email" name="email" placeholder="Enter email" autocomplete="off" required=""><br><br>
                         <label for="dname">Username:</label><br>
-                        <input id="dname" type="text" name="dname" placeholder="Enter Username"><br><br>
+                        <input id="dname" type="text" name="dname" placeholder="Enter Username" autocomplete="off" required=""><br><br>
                         <label for="passwd">Password:</label><br>
-                        <input id="passwd" type="password" name="passwd" placeholder="Enter Password"><br><br><!--key = PASSWD-->
+                        <input id="passwd" type="password" name="passwd" placeholder="Enter Password" autocomplete="off" required=""><br><br><!--key = PASSWD-->
                         <input type="submit" value="Submit">
                     </form>
                 </div>               
+            </div>
+            <div class="col-md-5">
+                <img src="static/images/cover2.png" width="144%">
             </div>
             <div class="col-md-2">
                 <br>
             </div>        
         </div>
-        <div class="row">
-                <div class="col-md-12"><br></div>        
-        </div>
-        <div class="row">
-                <div class="col-md-12"><br></div>        
-        </div>
+    </div>
+    <div class="row footer">
+        <div class="col-md-12"><br></div>        
+    </div>
+    <div class="row footer">
+        <div class="col-md-12"><br></div>        
     </div>
         
 {% endblock %}
