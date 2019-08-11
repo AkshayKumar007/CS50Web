@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.message == "wrong") {
                 const contents = '<div class="alert alert-primary" role="alert">Error! Check e-mail or password.</div>';
                 document.querySelector('#message').innerHTML = contents;
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
             }   
 
         }   
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         data.append('email', email);
         data.append('passwd', passwd);
-        // Send request
+    
         request.send(data);
         return false;
 

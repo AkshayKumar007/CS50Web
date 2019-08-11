@@ -2,7 +2,7 @@
 {% block title %} Flack : Register {% endblock %}
 {% block style %} 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-    <script src="{{url_for('static',filename='register.js')}}"></script>
+    <script src="{{ url_for('static',filename='register.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='register_stl.css') }}">
 
 {% endblock %}
@@ -63,19 +63,19 @@
                     <form id="form"><!--May have to change 'search' to 'index'-->
                         <fieldset>
                             <label for="fname">Full Name:</label><br>
-                            <input id="fname" type="text" name="fname" placeholder="Enter Full Name" autocomplete="off" required=""><br><br>
+                            <input id="fname" type="text" name="fname" autocomplete="off" required=""><br><br>
                         </fieldset>
                         <fieldset>
                             <label for="email">e-mail:</label><br>
-                            <input id="email" type="email" name="email" placeholder="Enter email" autocomplete="off" required=""><br><br>
+                            <input id="email" type="email" name="email" autocomplete="off" required=""><br><br>
                         </fieldset>
                         <fieldset>
                             <label for="dname">Username:</label><br>
-                            <input id="dname" type="text" name="dname" placeholder="Enter Username" autocomplete="off" required=""><br><br>
+                            <input id="dname" type="text" name="dname" autocomplete="off" required=""><br><br>
                         </fieldset>
                         <fieldset>
                             <label for="passwd">Password:</label><br>
-                            <input id="passwd" type="password" name="passwd" placeholder="Enter Password" autocomplete="off" required=""><br><br><!--key = PASSWD-->
+                            <input id="passwd" type="password" name="passwd" autocomplete="off" required=""><br><br><!--key = PASSWD-->
                         </fieldset>
                         <fieldset>
                             <button type="submit" value="Submit" class="btn btn-primary">Register</button>

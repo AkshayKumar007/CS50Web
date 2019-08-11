@@ -4,22 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const request = new XMLHttpRequest();
 
-        const fname = document.querySelector('#fname').value;//change for variables in DOM
+        const fname = document.querySelector('#fname').value;
         const dname = document.querySelector('#dname').value;
         const email = document.querySelector('#email').value;
         const passwd = document.querySelector('#passwd').value;
-        
-        request.open('POST', '/register');
+       
+        request.open('POST', '/verify');
         request.onload = () => {
             const data = JSON.parse(request.responseText);
-
             if (data.message == "no_mail") {// check for white-spacing of curly braces
                 const contents = '<div class="alert alert-primary" role="alert">Error! Looks like email is already taken."</div>';
+                document.querySelector('#fname').value = "";
+                document.querySelector('#dname').value = "";
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
                 document.querySelector('#message').innerHTML = contents;
-            }
-            else if (data.message == "no_dname"){
+            } else if (data.message == "no_dname"){
+                document.querySelector('#fname').value = "";
+                document.querySelector('#dname').value = "";
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
                 const contents = '<div class="alert alert-primary" role="alert">Error! Looks like Display Name is already taken."</div>';
                 document.querySelector('#result > .alert').innerHTML = contents;
+            } else {
+                document.querySelector('#fname').value = "";
+                document.querySelector('#dname').value = "";
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
+                request.open('GET', '/channel_list');
             }
         }
         const data = new FormData();
@@ -27,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         data.append('dname', dname);
         data.append('email', email);
         data.append('passwd', passwd);
-        // Send request
+    
         request.send(data);
-        return true;
+        return false;
     }
 });
 

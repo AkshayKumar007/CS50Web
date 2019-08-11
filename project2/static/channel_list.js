@@ -19,5 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Send request
     request.send(data);
-    return true;
+    return false;
 });
