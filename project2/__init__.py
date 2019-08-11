@@ -24,11 +24,13 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 
-channel = {} # to store channels and respective messages
+channels = {"#general":[]} # to store channels and respective messages
 # 'C'hannel for passing to DOMs
 
 @app.route("/")
 def index():
+    if 'username' in session:
+        return redirect(url_for('channel_list'))
     return render_template("index.html")
 
 
@@ -37,24 +39,24 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
 
-    else:
-    # if request.method == "POST":
-        fname = request.form.get("fname")
-        dname = request.form.get("dname")
-        passwd = request.form.get("passwd")
-        email = request.form.get("email")
-        if db.execute("SELECT * FROM users1 WHERE email = :email",{"email":email}).rowcount == 0:
-            if db.execute("SELECT * FROM users1 WHERE dname = :dname",{"dname":dname}).rowcount == 0:
-                db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
-                    ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
-                db.commit()
-                return render_template("channel_list.html", dname = dname)
-            else:
-                return jsonify({"message" : "no_dname"})
-                #add js code for displayname taken
-        else:
-            return jsonify({"message" : "no_mail"})
-            # add js code for user already exists
+    # else:
+    # # if request.method == "POST":
+    #     fname = request.form.get("fname")
+    #     dname = request.form.get("dname")
+    #     passwd = request.form.get("passwd")
+    #     email = request.form.get("email")
+    #     if db.execute("SELECT * FROM users1 WHERE email = :email",{"email":email}).rowcount == 0:
+    #         if db.execute("SELECT * FROM users1 WHERE dname = :dname",{"dname":dname}).rowcount == 0:
+    #             db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
+    #                 ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
+    #             db.commit()
+    #             return render_template("channel_list.html", dname = dname)
+    #         else:
+    #             return jsonify({"message" : "no_dname"})
+    #             #add js code for displayname taken
+    #     else:
+    #         return jsonify({"message" : "no_mail"})
+    #         # add js code for user already exists
 
 @app.route("/verify", methods = ["POST"])
 def verify():
@@ -68,7 +70,8 @@ def verify():
                 db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
                     ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
                 db.commit()
-                return render_template("channel_list.html", dname = dname)
+                session['username'] = dname
+                return jsonify({"message" : "success"})
             else:
                 return jsonify({"message" : "no_dname"})
                 #add js code for displayname taken
@@ -85,16 +88,13 @@ def channel_list():
         if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
             dname = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
             session['username'] = dname
-            if bool(channel):
-                return render_template("channel_list.html", Channel={})
-            else:
-                return render_template("channel_list.html", Channel = channel.keys())
+            return render_template("channel_list.html", Channel = list(channels.keys()))
         else:
             # goes to index.html
             return jsonify({"message" : "wrong"}) #need to add js file for this.
 
     elif request.method == "GET":
-        return render_template("channel_list.html", Channel = list(channel.keys()))
+        return render_template("channel_list.html", Channel = list(channels.keys()))
 
     
 @app.route("/create_channel", methods=["POST"])
@@ -107,14 +107,14 @@ def create_channel():
             # write statements as per our dictionary structure to add new channel
             if channel.get(cname, None) == None:#maybe redunadnt
                 channel[cname] = []
-            return render_template("channel_list.html", Channel = channel.keys())
+            return render_template("channel_list.html", Channel = list(channels.keys()))
 
 
 @app.route("/channel/<string>:c", methods=["GET", "POST"])
 def channel(c):
     if request.method == "GET":
         if c in channel:
-            return render_template("channel.html", Channel = channel[c])
+            return render_template("channel.html", Channel = channels[c])
         
     elif request.method == "POST":
         message = request.form.get("message")

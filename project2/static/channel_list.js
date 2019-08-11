@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         request.onload = () => {
             const data = JSON.parse(request.responseText);
             if (data.message == "exists") {
-                const contents = "Error! Looks like already exists."
+                const contents = "Error! Looks like already Channel exists."
                 document.querySelector('#message > .alert').innerHTML = contents;
             }   
         }
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = new FormData();
     data.append('cname', cname);//change for variables you created
 
-    // Send request
     request.send(data);
     return false;
 });
