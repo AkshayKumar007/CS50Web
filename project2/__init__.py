@@ -29,8 +29,8 @@ channels = {"#general":[]} # to store channels and respective messages
 
 @app.route("/")
 def index():
-    if 'username' in session:
-        return redirect(url_for('channel_list'))
+    # if 'username' in session:
+    #     return redirect(url_for('channel_list'))
     return render_template("index.html")
 
 
@@ -39,28 +39,8 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
 
-    # else:
-    # # if request.method == "POST":
-    #     fname = request.form.get("fname")
-    #     dname = request.form.get("dname")
-    #     passwd = request.form.get("passwd")
-    #     email = request.form.get("email")
-    #     if db.execute("SELECT * FROM users1 WHERE email = :email",{"email":email}).rowcount == 0:
-    #         if db.execute("SELECT * FROM users1 WHERE dname = :dname",{"dname":dname}).rowcount == 0:
-    #             db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
-    #                 ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
-    #             db.commit()
-    #             return render_template("channel_list.html", dname = dname)
-    #         else:
-    #             return jsonify({"message" : "no_dname"})
-    #             #add js code for displayname taken
-    #     else:
-    #         return jsonify({"message" : "no_mail"})
-    #         # add js code for user already exists
-
-@app.route("/verify", methods = ["POST"])
-def verify():
-    if request.method == "POST":
+    else:
+    # if request.method == "POST":
         fname = request.form.get("fname")
         dname = request.form.get("dname")
         passwd = request.form.get("passwd")
@@ -70,15 +50,14 @@ def verify():
                 db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
                     ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
                 db.commit()
-                session['username'] = dname
                 return jsonify({"message" : "success"})
+                # return render_template("channel_list.html")
             else:
                 return jsonify({"message" : "no_dname"})
                 #add js code for displayname taken
         else:
             return jsonify({"message" : "no_mail"})
             # add js code for user already exists
-
 
 @app.route("/channel_list", methods = ["GET", "POST"])
 def channel_list():
@@ -88,7 +67,8 @@ def channel_list():
         if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
             dname = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
             session['username'] = dname
-            return render_template("channel_list.html", Channel = list(channels.keys()))
+            return jsonify({"message" : "success"})
+            # return render_template("channel_list.html", Channel = list(channels.keys()))
         else:
             # goes to index.html
             return jsonify({"message" : "wrong"}) #need to add js file for this.
@@ -141,6 +121,8 @@ def logout():
    return redirect(url_for('index'))
 
 if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    # app.run(host='0.0.0.0', port=port)
     socketio.run(app)
 
 # channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            

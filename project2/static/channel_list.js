@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#form').onsubmit = () => {
         const request = new XMLHttpRequest();
-        // create variable for channel name
+     
         const cname = document.querySelector('#cname').value;
 
         request.open('POST', '/create_channel');

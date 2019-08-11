@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#message').innerHTML = contents;
                 document.querySelector('#email').value = "";
                 document.querySelector('#passwd').value = "";
-            }   
-
+            }   else if (data.message == "success") {
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
+                window.location.replace("/channel_list");
+            }
         }   
         
         const data = new FormData();

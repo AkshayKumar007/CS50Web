@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.querySelector('#email').value;
         const passwd = document.querySelector('#passwd').value;
        
-        request.open('POST', '/verify');
+        request.open('POST', '/register');
         request.onload = () => {
             const data = JSON.parse(request.responseText);
             if (data.message == "no_mail") {// check for white-spacing of curly braces
@@ -25,19 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } else if (data.message == "no_dname") {
                 
+                const contents = '<div class="alert alert-primary" role="alert">Error! Looks like DName is already taken."</div>';
+
                 document.querySelector('#dname').value = "";
                 document.querySelector('#passwd').value = "";
-                
-                const contents = '<div class="alert alert-primary" role="alert">Error! Looks like Display Name is already taken."</div>';
-                
-                document.querySelector('#result > .alert').innerHTML = contents;
+                                
+                document.querySelector('#message').innerHTML = contents;
 
             } else if (data.message == "success") {
                 document.querySelector('#fname').value = "";
                 document.querySelector('#dname').value = "";
                 document.querySelector('#email').value = "";
                 document.querySelector('#passwd').value = "";
-                request.open('GET', '/channel_list');// may break code
+                // request.open('GET', '/channel_list');// may break code
+                window.location.replace("/channel_list");
+                
             }
         }
         const data = new FormData();
