@@ -74,7 +74,7 @@ def channel_list():
             return jsonify({"message" : "wrong"}) #need to add js file for this.
 
     elif request.method == "GET":
-        return render_template("channel_list.html", Channel = list(channels.keys()))
+        return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
     
 @app.route("/create_channel", methods=["POST"])
@@ -87,14 +87,14 @@ def create_channel():
             # write statements as per our dictionary structure to add new channel
             if channel.get(cname, None) == None:#maybe redunadnt
                 channel[cname] = []
-            return render_template("channel_list.html", Channel = list(channels.keys()))
+            return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
 
 @app.route("/channel/<string>:c", methods=["GET", "POST"])
 def channel(c):
     if request.method == "GET":
         if c in channel:
-            return render_template("channel.html", Channel = channels[c])
+            return render_template("channel.html", dname = session['username'], Channel = channels[c])
         
     elif request.method == "POST":
         message = request.form.get("message")

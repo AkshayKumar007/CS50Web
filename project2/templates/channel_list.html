@@ -15,43 +15,53 @@
     
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-item nav-link active" href="{{ url_for('index') }}" method="POST"> <button type="button" style="background-color: white; border-radius: 24px;" class="btn btn-outline-success">Login</button> <span class="sr-only">(current)</span></a>
-                </li>
+                <!-- <li class="nav-item active">
+                    <a class="dropdown-item active" href="{{ url_for('logout') }}" method="POST"> <button type="button" style="background-color: white; border-radius: 24px;" class="btn btn-outline-success">Logout</button> <span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Signed in as {{ dname }}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item active" href="{{ url_for('logout') }}" method="POST"> <button type="button" style="background-color: white; border-radius: 24px;" class="btn btn-outline-success">Logout</button> <span class="sr-only">(current)</span></a>
+                    </div>
+                  </li>
             </ul>
         </div>
     </nav>
+    <!--rest content-->
     <div class="row">
-        <h2>Create a new Channel:</h2>
-        <form id="form">
-            <!-- action="url_for('channel_list')" method="POST"> -->
-            <label for="cname">Channel Name:</label>
-            <input id="cname"type="text" name="cname" placeholder="Channel Name">
-            <input type="submit" value="Create">
-        </form>
-    </div>
-
-    <div class="row" id="message">
-        <div class="alert alert-primary" role="alert">
-            <!--will be filled by JS-->
+        <div class="col-md-12"><br></div>        
+    </div> 
+    <div class="body">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="message">
+                    <!--filled by JS-->
+                </div>
+                <h2>Create a new Channel:</h2>
+                <div class="craeteBocx">
+                    <form id="form">
+                        <label for="cname">Channel Name:</label>
+                        <input id="cname"type="text" name="cname" placeholder="Channel Name">
+                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+                {% for c in channel %}
+                    <div class="cards">
+                        <h2>{{ c }}</h2>
+                        <p>
+                            <a href="{{ url_for('channel', channel = c) }}">visit Channel</a>
+                        </p>
+                    </div>        
+                {% endfor %}
+            </div>
         </div>
     </div>
-    <!-- <div class="message">
-    </div> -->
-    {% for c in channel %}
-        <div class="cards">
-            <h2>{{ c }}</h2>
-            <p>
-                <a href="{{ url_for('channel', channel = c) }}">visit Channel</a>
-            </p>
-        </div>
-        <br>
-    {% else %}
-        <div class="NoContentMessage cards">
-            Sorry! Seems like there are no channels.
-        </div>
-    {% endfor %}
-
 {% endblock%}
 
 <!-- .time, .math, .dbms, .nptel {
