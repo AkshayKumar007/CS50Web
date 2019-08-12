@@ -23,7 +23,7 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-
+#add if condition to check for pre-existing channels
 channels = {"#general":[]} # to store channels and respective messages
 # 'C'hannel for passing to DOMs
 
@@ -32,6 +32,19 @@ def index():
     # if 'username' in session:
     #     return redirect(url_for('channel_list'))
     return render_template("index.html")
+
+@app.route("/login", methods=["POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        passwd = request.form.get("passwd")
+        if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
+            res = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
+            dname = [ row[0][1] for row in res ]
+            session['username'] = dname
+            return jsonify({"message" : "success"})            
+        else:
+            return jsonify({"message" : "wrong"}) # goes to index.html
 
 
 @app.route("/register", methods = ["GET", "POST"])
@@ -62,19 +75,18 @@ def register():
 
 @app.route("/channel_list", methods = ["GET", "POST"])
 def channel_list():
-    if request.method == "POST":
-        email = request.form.get("email")
-        passwd = request.form.get("passwd")
-        if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
-            dname = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
-            session['username'] = dname
-            return jsonify({"message" : "success"})
-            # return render_template("channel_list.html", Channel = list(channels.keys()))
-        else:
-            # goes to index.html
-            return jsonify({"message" : "wrong"}) #need to add js file for this.
-
-    elif request.method == "GET":
+    # if request.method == "POST":
+    #     email = request.form.get("email")
+    #     passwd = request.form.get("passwd")
+    #     if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
+    #         dname = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
+    #         session['username'] = dname
+    #         return jsonify({"message" : "success"})
+    #         # return render_template("channel_list.html", Channel = list(channels.keys()))
+    #     else:
+    #         # goes to index.html
+    #         return jsonify({"message" : "wrong"}) #need to add js file for this.
+    if request.method == "GET":
         return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
     
@@ -82,13 +94,15 @@ def channel_list():
 def create_channel():
     if request.method == "POST":
         cname = request.form.get("cname")
-        if cname in channel:
+        if cname in channels:
             return jsonify({"message" : "exists"})
         else:
             # write statements as per our dictionary structure to add new channel
-            if channel.get(cname, None) == None:#maybe redunadnt
-                channel[cname] = []
-            return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
+            if channels.get(cname, None) == None:#maybe redunadnt
+                channels[cname] = []
+            return jsonify({"message" : "success"})
+        # , "dname" : session['username'], "Channel" : list(channels.keys())
+            # return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
 
 @app.route("/channel/<string:chnl>", methods=["GET", "POST"])
@@ -122,7 +136,7 @@ def logout():
    return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    socketio.run(app)
+    socketio.run(app)#may heal our pickle problem
 
 # channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            
 

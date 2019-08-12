@@ -102,6 +102,7 @@ class AsyncClient(client.Client):
                                    engineio_path=socketio_path)
         except engineio.exceptions.ConnectionError as exc:
             six.raise_from(exceptions.ConnectionError(exc.args[0]), None)
+        self.connected = True
 
     async def wait(self):
         """Wait until the connection with the server ends.
@@ -141,6 +142,9 @@ class AsyncClient(client.Client):
         Note: this method is a coroutine.
         """
         namespace = namespace or '/'
+        if namespace != '/' and namespace not in self.namespaces:
+            raise exceptions.BadNamespaceError(
+                namespace + ' is not a connected namespace.')
         self.logger.info('Emitting event "%s" [%s]', event, namespace)
         if callback is not None:
             id = self._generate_ack_id(namespace, callback)
@@ -232,6 +236,7 @@ class AsyncClient(client.Client):
                                     namespace=n))
         await self._send_packet(packet.Packet(
             packet.DISCONNECT, namespace='/'))
+        self.connected = False
         await self.eio.disconnect(abort=True)
 
     def start_background_task(self, target, *args, **kwargs):
@@ -286,10 +291,18 @@ class AsyncClient(client.Client):
             self.namespaces.append(namespace)
 
     async def _handle_disconnect(self, namespace):
+        if not self.connected:
+            return
         namespace = namespace or '/'
+        if namespace == '/':
+            for n in self.namespaces:
+                await self._trigger_event('disconnect', namespace=n)
+            self.namespaces = []
         await self._trigger_event('disconnect', namespace=namespace)
         if namespace in self.namespaces:
             self.namespaces.remove(namespace)
+        if namespace == '/':
+            self.connected = False
 
     async def _handle_event(self, namespace, id, data):
         namespace = namespace or '/'
@@ -335,6 +348,9 @@ class AsyncClient(client.Client):
             namespace))
         if namespace in self.namespaces:
             self.namespaces.remove(namespace)
+        if namespace == '/':
+            self.namespaces = []
+            self.connected = False
 
     async def _trigger_event(self, event, namespace, *args):
         """Invoke an application event handler."""
@@ -431,9 +447,12 @@ class AsyncClient(client.Client):
         """Handle the Engine.IO disconnection event."""
         self.logger.info('Engine.IO connection dropped')
         self._reconnect_abort.set()
-        for n in self.namespaces:
-            await self._trigger_event('disconnect', namespace=n)
-        await self._trigger_event('disconnect', namespace='/')
+        if self.connected:
+            for n in self.namespaces:
+                await self._trigger_event('disconnect', namespace=n)
+            await self._trigger_event('disconnect', namespace='/')
+            self.namespaces = []
+            self.connected = False
         self.callbacks = {}
         self._binary_packet = None
         self.sid = None
