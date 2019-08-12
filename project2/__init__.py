@@ -50,6 +50,7 @@ def register():
                 db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
                     ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
                 db.commit()
+                session['username'] = dname
                 return jsonify({"message" : "success"})
                 # return render_template("channel_list.html")
             else:
@@ -90,18 +91,18 @@ def create_channel():
             return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
 
-@app.route("/channel/<string>:c", methods=["GET", "POST"])
-def channel(c):
+@app.route("/channel/<string:chnl>", methods=["GET", "POST"])
+def channel(chnl):
     if request.method == "GET":
-        if c in channel:
-            return render_template("channel.html", dname = session['username'], Channel = channels[c])
+        if chnl in channels:
+            return render_template("channel.html", dname = session['username'], Channel = channels[chnl])
         
     elif request.method == "POST":
         message = request.form.get("message")
         uname = session["username"]
         time = datetime.now()
         #update channel content using sockets
-        channel[c].append((message, uname, time))
+        channels[chnl].append((message, uname, time))
         
 
 @socketio.on("send message")
@@ -121,8 +122,6 @@ def logout():
    return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    # app.run(host='0.0.0.0', port=port)
     socketio.run(app)
 
 # channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            

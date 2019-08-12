@@ -15,9 +15,6 @@
     
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <!-- <li class="nav-item active">
-                    <a class="dropdown-item active" href="{{ url_for('logout') }}" method="POST"> <button type="button" style="background-color: white; border-radius: 24px;" class="btn btn-outline-success">Logout</button> <span class="sr-only">(current)</span></a>
-                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Menu
@@ -42,22 +39,27 @@
                     <!--filled by JS-->
                 </div>
                 <h2>Create a new Channel:</h2>
-                <div class="craeteBocx">
+                <div class="createBocx">
                     <form id="form">
                         <label for="cname">Channel Name:</label>
-                        <input id="cname"type="text" name="cname" placeholder="Channel Name">
+                        <input id="cname" type="text" name="cname" placeholder="Channel Name">
                         <button type="submit" value="Create" class="btn btn-primary">Create</button>
                     </form>
                 </div>
             </div>
             <div class="col-md-8">
-                {% for c in channel %}
+                {% for c in Channel %}
                     <div class="cards">
-                        <h2>{{ c }}</h2>
+                        <h3>{{ c }}</h3>
                         <p>
-                            <a href="{{ url_for('channel', channel = c) }}">visit Channel</a>
+                            <a href="{{ url_for('channel', chnl = c) }}">visit Channel</a>
                         </p>
-                    </div>        
+                    </div> 
+                {% else %}
+                    <div class="cards">
+                        <h3> Looks like there are no Channels. </h3>
+                    </div>      
+                    <img src="static/images/nochannels.png"> 
                 {% endfor %}
             </div>
         </div>

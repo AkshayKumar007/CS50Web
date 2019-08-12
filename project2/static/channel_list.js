@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#form').onsubmit = () => {
+
         const request = new XMLHttpRequest();
      
         const cname = document.querySelector('#cname').value;
@@ -13,10 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#message > .alert').innerHTML = contents;
             }   
         }
-    }
-    const data = new FormData();
-    data.append('cname', cname);//change for variables you created
+   
 
-    request.send(data);
-    return false;
+        const data = new FormData();
+        
+        data.append('cname', cname);
+        
+        request.send(data);
+        return false;
+    }
+    
 });
