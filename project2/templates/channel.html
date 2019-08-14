@@ -22,7 +22,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Signed in as {{ dname }}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item active" href="{{ url_for('logout') }}" method="POST"> <button type="button" style="background-color: white; border-radius: 24px;" class="btn btn-outline-success">Logout</button> <span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item active" href="{{ url_for('logout') }}" method="POST"> Logout <span class="sr-only">(current)</span></a>
                     </div>
                   </li>
             </ul>
@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-md-2 side-panel"><p></p></div>
         <div class="col-md-8">
-            <div class="bocx">
+            <!-- <div class="bocx">
                 {% for c in Channel %}
                     {{ c[0] }}<br>
                     {{ c[1] }}<br>
@@ -43,15 +43,17 @@
                 {% else %}
                     <p>No messages</p>
                 {% endfor %}
-            </div> 
-            <div id="push">
-                <!--filled by socket.io-->
-            </div>
+            </div>  -->
+            <!-- <div class="push"> -->
+                <ul id="push">
+                    <!--filled by socket.io-->
+                </ul>
+            <!-- </div> -->
             <div class="bottomBar">
                 <form id="form">
-                    <label for="message">Message:</label>
-                    <input id="message" type="text" name="message">
-                    <input type="submit" value="Create">
+                    <label for="messages">Message:</label>
+                    <input id="messages" type="text" name="messages">
+                    <input type="submit" value="Submit">
                  </form>
             </div>           
         </div>

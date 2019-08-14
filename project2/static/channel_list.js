@@ -20,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#cname').value = "";
                 window.location.reload(true);
             }
-        }
-   
+        }   
 
         const data = new FormData();
 

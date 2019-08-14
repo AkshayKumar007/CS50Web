@@ -73,21 +73,10 @@ def register():
             return jsonify({"message" : "no_mail"})
             # add js code for user already exists
 
-@app.route("/channel_list", methods = ["GET", "POST"])
+@app.route("/channel_list")
 def channel_list():
-    # if request.method == "POST":
-    #     email = request.form.get("email")
-    #     passwd = request.form.get("passwd")
-    #     if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
-    #         dname = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
-    #         session['username'] = dname
-    #         return jsonify({"message" : "success"})
-    #         # return render_template("channel_list.html", Channel = list(channels.keys()))
-    #     else:
-    #         # goes to index.html
-    #         return jsonify({"message" : "wrong"}) #need to add js file for this.
-    if request.method == "GET":
-        return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
+    # if request.method == "GET":
+    return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
     
 @app.route("/create_channel", methods=["POST"])
@@ -107,27 +96,26 @@ def create_channel():
 
 @app.route("/channel/<string:chnl>", methods=["GET", "POST"])
 def channel(chnl):
+    vote.chnl = chnl #newly added after chrome-revelations
     if request.method == "GET":
         if chnl in channels:
             return render_template("channel.html", dname = session['username'], Channel = channels[chnl])
         
-    elif request.method == "POST":
-        message = request.form.get("message")
-        uname = session["username"]
-        time = datetime.now()
-        #update channel content using sockets
-        channels[chnl].append((message, uname, time))
+    # elif request.method == "POST":
+    #     message = request.form.get("message")
+    #     uname = session["username"]
+    #     time = datetime.now()
+    #     #update channel content using sockets
+    #     channels[chnl].append((message, uname, time))
         
-
-@socketio.on("send message")
+#working
+@socketio.on('send messages')
 def vote(data):
-    # selection = data["selection"]
-    message = data["selection"]
-    uname = session["username"]
-    time = datetime.now()
-    selection = {"message":message, "uname": uname, "time":time}
-    emit("announce message", {"selection": selection}, broadcast=True)
-
+    messages = data['messages']
+    # uname = session["username"]
+    # time = datetime.now()
+    # channels[vote.chnl].append((messages, uname, time))
+    emit('announce messages', {"messages":messages}, broadcast=True)
 
 @app.route('/logout')
 def logout():
@@ -136,20 +124,4 @@ def logout():
    return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    socketio.run(app)#may heal our pickle problem
-
-# channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            
-
-#  channel _list alpha
-
-# if request.method == "POST":#from index
-#         temp = request.form.get("dname")
-#         if session.get(temp, None) == None:
-#             session["username"] = request.form.get("dname")
-#         return render_template("chnl_list.html", channel = channel.keys())
-    
-    
-#if request.method == "GET":#from register
-#   cname = request.form.get("cname")
-#       if cname in channel:
-#           pass
+    socketio.run(app)
