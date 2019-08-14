@@ -8,12 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('button').forEach(button => {
 
             alert("Refresh Page before messaging!!");
+
             button.onclick = () => {
                 const messages = document.querySelector('#messages').value;//correct
-                var today = new Date();
-                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                var dateTime = date+' '+time;
+                let today = new Date();
+                let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                let dateTime = date+' '+time;
                 socket.emit('send messages', {'messages': messages, 'time': dateTime});//correct
                 return false;
             };
@@ -22,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.on('announce messages', data => {
         //correct
-        const li = document.createElement('li');
-        li.innerHTML = `${data.dname} \n ${data.messages} \n ${data.time}\n`;
-        document.querySelector('#push').append(li);
-        // alert("Javascript loaded!!");
+        var div = document.createElement('div');
+        div.className = 'bocx';
+        div.innerHTML = `${data.messages} <br><small> ${data.dname} &#160 </small><small> ${data.time} </small><br>`;
+        document.querySelector('.push').appendChild(div);
         return false;
     });    
 });

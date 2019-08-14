@@ -66,13 +66,13 @@ def register():
                 db.commit()
                 session['username'] = dname
                 return jsonify({"message" : "success"})
-                # return render_template("channel_list.html")
+                
             else:
                 return jsonify({"message" : "no_dname"})
-                #add js code for displayname taken
+         
         else:
             return jsonify({"message" : "no_mail"})
-            # add js code for user already exists
+           
 
 @app.route("/channel_list")
 def channel_list():
@@ -101,15 +101,8 @@ def channel(chnl):
     if request.method == "GET":
         if chnl in channels:
             return render_template("channel.html", dname = session['username'], Channel = channels[chnl])
+  
         
-    # elif request.method == "POST":
-    #     message = request.form.get("message")
-    #     uname = session["username"]
-    #     time = datetime.now()
-    #     #update channel content using sockets
-    #     channels[chnl].append((message, uname, time))
-        
-#working
 @socketio.on('send messages')
 def vote(data):
     messages = data['messages']
