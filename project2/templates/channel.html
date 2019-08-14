@@ -7,7 +7,7 @@
 {% endblock %}
 
 {%  block body %}
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9d58;">
+    <nav class="navbar navbar-light" style="background-color: #0f9d58;">
         <a class="navbar-brand" href="#" style="color: white; font-weight: bolder;">FLACK.</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span> 
@@ -29,32 +29,37 @@
         </div>
     </nav>
 <!--rest content-->
-    <div class="row">
-        <div class="col-md-12"><br></div>        
-    </div>
-    <div class="row">
-        <div class="col-md-2 side-panel"><p></p></div>
-        <div class="col-md-8">
-            <!-- <div class="bocx">
-                {% for c in Channel %}
-                    {{ c[0] }}<br>
-                    {{ c[1] }}<br>
-                    {{ c[2] }}
-                {% else %}
-                    <p>No messages</p>
-                {% endfor %}
-            </div>  -->
-            <!-- <div class="push"> -->
-                <ul id="push"></ul>
-            <!-- </div> -->
-            <div class="bottomBar">
-                <form id="form">
-                    <label for="messages">Message:</label>
-                    <input id="messages" type="text" name="messages">
-                    <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
-                 </form>
-            </div>           
+    <div class="body">
+        <div class="row">
+            <div class="col-md-12"><br></div>        
         </div>
-        <div class="col-md-2 side-panel"><p></p></div>
+        <div class="row">
+            <div class="col-md-2 side-panel"><p></p></div>
+            <div class="col-md-8">
+                {% for c in Channel %}
+                    <div class="bocx">
+                        {{ c[0] }}<br>
+                        <small>{{ c[1] }}&#160</small>
+                        <small>{{ c[2] }}</small>
+                    </div> <br>
+                {% else %}
+                    <div class="bocx">
+                        <p>No messages</p>
+                    </div>
+                {% endfor %}
+                
+                <!-- <div class="push"> -->
+                    <ul id="push"></ul>
+                <!-- </div> -->
+                <nav class="navbar fixed-bottom navbar-light" style="background-color: #ece5dd;">
+                    <form id="form" class="form-inline">
+                        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <input id="messages" type="text" name="messages" class="form-control mr-sm-2" aria-label="Search">
+                        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </nav>        
+            </div>
+            <div class="col-md-2 side-panel"><p></p></div>
+        </div>
     </div>
 {% endblock %}

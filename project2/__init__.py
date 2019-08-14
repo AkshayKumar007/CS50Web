@@ -1,9 +1,10 @@
-import os, requests, datetime, threading
+import os, requests, threading, json
 
 from flask import Flask, render_template, request, session, url_for, redirect, jsonify
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from datetime import datetime as dt
 
 from flask_socketio import SocketIO, emit
 
@@ -40,8 +41,8 @@ def login():
         passwd = request.form.get("passwd")
         if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
             res = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
-            dname = [ row[0][1] for row in res ]
-            session['username'] = dname
+            dname = [ row[0] for row in res ]
+            session['username'] = dname[0]
             return jsonify({"message" : "success"})            
         else:
             return jsonify({"message" : "wrong"}) # goes to index.html
@@ -112,10 +113,10 @@ def channel(chnl):
 @socketio.on('send messages')
 def vote(data):
     messages = data['messages']
-    # uname = session["username"]
-    # time = datetime.now()
-    # channels[vote.chnl].append((messages, uname, time))
-    emit('announce messages', {"messages":messages}, broadcast=True)
+    time = data['time']
+    dname = session["username"]
+    channels[vote.chnl].append((messages, dname, time))
+    emit('announce messages', {"messages": messages, "dname": dname, "time": time}, broadcast=True)
 
 @app.route('/logout')
 def logout():
