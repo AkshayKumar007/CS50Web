@@ -5,18 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // When connected, configure buttons
     socket.on('connect', () => {
-        document.querySelector('#form').onsubmit = () => {
-            const messages = document.querySelector('#messages').value;//correct
-            socket.emit('send messages', {'messages': messages});//correct
-            return false;
-        }
+        document.querySelectorAll('button').forEach(button => {
+            button.onclick = () => {
+                const messages = document.querySelector('#messages').value;//correct
+                socket.emit('send messages', {'messages': messages});//correct
+                return false;
+            };
+        });
     });
 
     socket.on('announce messages', data => {
         //correct
         const li = document.createElement('li');
-        li.innerHTML = `${data.messages}`;
+        li.innerHTML = `Recieved messsage: ${data.messages}`;
         document.querySelector('#push').append(li);
+        alert("Javascript loaded!!");
         return false;
     });    
 });
