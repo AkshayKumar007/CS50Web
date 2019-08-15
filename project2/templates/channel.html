@@ -9,6 +9,7 @@
 {%  block body %}
     <nav class="navbar navbar-light" style="background-color: #0f9d58;">
         <a class="navbar-brand" href="#" style="color: white; font-weight: bolder;">FLACK.</a>
+        <a class="nav-link" href="#" style="color: white;" id="channel_name">{{ channel_name }}</a> <!-- working -->
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span> 
         </button>
@@ -42,14 +43,10 @@
                         <small>{{ c[1] }}&#160</small>
                         <small>{{ c[2] }}</small>
                     </div> <br>
-                {% else %}
-                    <div class="bocx">
-                        <p>No messages</p>
-                    </div>
                 {% endfor %}
                 
                 <div class="push">
-                    <!-- <ul id="push"></ul> -->
+                    <!-- filled by JavaScript -->
                 </div>
                 <nav class="navbar fixed-bottom navbar-light" style="background-color: #ece5dd;">
                     <form id="form" class="form-inline">

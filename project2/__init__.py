@@ -24,7 +24,6 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-#add if condition to check for pre-existing channels
 channels = {"#general":[]} # to store channels and respective messages
 # 'C'hannel for passing to DOMs
 
@@ -89,6 +88,8 @@ def create_channel():
         else:
             # write statements as per our dictionary structure to add new channel
             if channels.get(cname, None) == None:#maybe redunadnt
+                if cname[0] != '#':
+                    cname = '#' + cname[:]
                 channels[cname] = []
             return jsonify({"message" : "success"})
         # , "dname" : session['username'], "Channel" : list(channels.keys())
@@ -100,8 +101,8 @@ def channel(chnl):
     vote.chnl = chnl #newly added after chrome-revelations
     if request.method == "GET":
         if chnl in channels:
-            return render_template("channel.html", dname = session['username'], Channel = channels[chnl])
-  
+            return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl)
+     
         
 @socketio.on('send messages')
 def vote(data):
@@ -110,12 +111,14 @@ def vote(data):
     dname = session["username"]
     channels[vote.chnl].append((messages, dname, time))
     emit('announce messages', {"messages": messages, "dname": dname, "time": time}, broadcast=True)
+    
 
 @app.route('/logout')
 def logout():
    # remove the username from the session if it is there
    session.pop('username', None)
-   return redirect(url_for('index'))
+   return render_template("logout.html")
+
 
 if __name__ == "__main__":
     socketio.run(app)

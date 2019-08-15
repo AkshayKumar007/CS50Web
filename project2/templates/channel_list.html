@@ -28,37 +28,30 @@
         </div>
     </nav>
     <!--rest content-->
-    <div class="row">
-        <div class="col-md-12"><br></div>        
-    </div> 
     <div class="body">
         <div class="row">
-            <div class="col-md-4">
-                <div id="message">
-                    <!--filled by JS-->
-                </div>
-                <h2>Create a new Channel:</h2>
+            <div class="col-md-5">
                 <div class="createBocx">
+                    <br><br><h2>Create a new Channel:</h2><br>
+                    <div id="message">
+                            <!--filled by JS-->
+                        </div>
                     <form id="form">
-                        <label for="cname">Channel Name:</label>
+                        <label for="cname">Channel Name: #</label>
                         <input id="cname" type="text" name="cname" placeholder="Channel Name">
-                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
+                        <button type="submit" value="Create" class="btn btn-primary">Create</button><br><br><br>
+                        <img src="static/images/nochannels.png" width="81%" >
                     </form>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 {% for c in Channel %}
                     <div class="cards">
                         <h3>{{ c }}</h3>
                         <p>
                             <a href="{{ url_for('channel', chnl = c) }}">visit Channel</a>
                         </p>
-                    </div> <br>
-                {% else %}
-                    <div class="cards">
-                        <h3> Looks like there are no Channels. </h3>
-                    </div>      
-                    <img src="static/images/nochannels.png"> 
+                    </div> <br>                        
                 {% endfor %}
             </div>
         </div>

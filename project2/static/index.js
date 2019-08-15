@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   
+    if (localStorage.getItem('channel_name') && localStorage.getItem('channel_name') !== null) // !localStorage.getItem('channel_name') && 
+            window.location.replace(`/channel/${localStorage.getItem('channel_name')}`);
+            
     document.querySelector('#form').onsubmit = () => {
 
         const request = new XMLHttpRequest();

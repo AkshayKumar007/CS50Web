@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    var chnl = document.querySelector('#channel_name').innerHTML;
+    if( chnl[0] === '#') {
+        chnl = '%23' + chnl.slice(1,chnl.length);
+    }
+    localStorage.setItem('channel_name', chnl);//working
+    
     // Connect to websocket
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
 

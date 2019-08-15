@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.message == "exists") {
 
-                const contents = "Error! Looks like already Channel exists."
-                document.querySelector('#message > .alert').innerHTML = contents;
+                const contents = '<div class="alert alert-primary" role="alert">Error! Channel already exists.</div>';
+                document.querySelector('#message').innerHTML = contents;
 
             } else if (data.message == "success") {
                 document.querySelector('#cname').value = "";
