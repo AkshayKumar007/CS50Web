@@ -33,9 +33,8 @@ channels = {"#general":[]} # to store channels and respective messages
 
 @app.route("/")
 def index():
-    # if 'username' in session:
-    #     return redirect(url_for('channel_list'))
     return render_template("index.html")
+
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -79,7 +78,6 @@ def register():
 
 @app.route("/channel_list")
 def channel_list():
-    # if request.method == "GET":
     return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
     
@@ -96,14 +94,12 @@ def create_channel():
                     cname = '#' + cname[:]
                 channels[cname] = []
             return jsonify({"message" : "success"})
-        # , "dname" : session['username'], "Channel" : list(channels.keys())
-            # return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
 
-@app.route("/channel/<string:chnl>", methods=["GET", "POST"])
+@app.route("/channel/<string:chnl>", methods=["GET"])
 def channel(chnl, response = None): #may need to remove this response
     upload_file.chnl = chnl
-    vote.chnl = chnl #newly added after chrome-revelations
+    vote.chnl = chnl 
     if request.method == "GET":
         if chnl in channels:
             res1 = db.execute("SELECT * FROM filedata WHERE channelname = :channelname", {"channelname": chnl}).fetchall()
@@ -111,6 +107,7 @@ def channel(chnl, response = None): #may need to remove this response
                 return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = None)
             else :
                 return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = response)
+     
         
 @socketio.on('send messages')
 def vote(data):
@@ -129,25 +126,18 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/result/<string:results>', methods=['GET', 'POST'])
-def result(results):    
-    return render_template('result.html', message = results)
-
-
 @app.route('/upload_file', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
-            flash('No file part found')
-            # return redirect(url_for('result', results="fail"))
+            # flash('No file part found')
             return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
         file = request.files['file']
         # if user does not select file, browser also
         # submit an empty part without filename
         if file.filename == '':
-            flash('No selected file')
-            # return redirect(url_for('result', results="fail"))
+            # flash('No selected file')
             return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
 
         if file and allowed_file(file.filename):
@@ -157,11 +147,12 @@ def upload_file():
                 ,{ "dname": session['username'], "filename": filename, "filetype": extension_name, "channelname": upload_file.chnl })
             db.commit()
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            # return redirect(url_for('result', results="success"))
             return redirect(url_for('channel', response="success", chnl = upload_file.chnl))
+            
+        return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
 
 
-# FOR DOWNLOAD
+# for viewing
 @app.route('/uploads/<filename>')
 def uploads(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
