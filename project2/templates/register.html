@@ -1,60 +1,98 @@
 {% extends "layout.html" %}
 {% block title %} Flack : Register {% endblock %}
-{% block style %} 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+{% block style %}
+    <script src="{{ url_for('static',filename='register.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='register_stl.css') }}">
-    <script type="text/javascript"{{url_for('static',filename='register.js')}}></script>
-    <!-- <script type="text/javascript">
-        myVar = message({{vars|tojson}})
-    </script> -->
 
 {% endblock %}
 {% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9d58;">
+        <a class="navbar-brand" href="#" style="color: white; font-weight: bolder;">FLACK.</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> 
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-item nav-link active" href="{{ url_for('index') }}" method="POST"> <button type="button" style="background-color: white; border-radius: 24px;" class="btn btn-outline-success">Login</button> <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--rest content-->
     <div class="row">
-        <div class="col-md-1">
-            <br>
-        </div>
-        <div class="col-md-10">
-            <h1>Flack</h1>
-            <h4> Flack is a platform that combines workplace chat, meetings, notes, and attachments. Let's get started!</h4>
-        </div>
-        <div class="col-md-1">
-            <br>
-        </div>
-    </div>
-    <div class="row" id="result">
-        <div class="alert alert-primary" role="alert">
-            <!--error message will appear here-->
-            <!-- Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken. -->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <br>
-        </div>
-        <div class="col-md-8" id="bocx">
-            <h2> Register </h2>
-            <br>
-            <form id="form"><!--May have to change 'search' to 'index'-->
-                <!-- <form action="{{url_for('register')}}" method="POST"> -->
-                <label for="fname">Full Name</label>
-                <input id="fname" type="text" name="fname" placeholder="Enter Full Name"><br><br>
-                <label for="email">E-mail</label>
-                <input id="email" type="email" name="email" placeholder="Enter email"><br><br>
-                <label for="dname">Username</label>
-                <input id="dname" type="text" name="dname" placeholder="Enter Username"><br><br>
-                <label for="passwd">Password</label>
-                <input id="passwd" type="password" name="passwd" placeholder="Enter Password"><br><br><!--key = PASSWD-->
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div class="col-md-2">
-            <br>
+        <div class="col-md-12"><br></div>        
+    </div>  
+    <div class="body">
+        <div class="row">
+            <div class="col-md-2">
+                <p></p>
+            </div>
+            <div class="col-md-8 separable">
+                <h2>Welcome to </h2>
+                <h1>&#160Flack. </h1>
+                <h2>!</h2>
+                <h5> Flack is a platform that combines workplace chat, meetings, notes, and attachments.</h5>
+                <h5>Let's get started!</h5>
+            </div>
+            <div class="col-md-2">
+                 <p></p>
+            </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-2">
+                <br>
+            </div>
+            <div class="col-md-3">
+                <br><br>
+                <div id="message">
+                    <!--filled by JS-->
+                </div>
+                <div class="registerBocx">
+                    <h2> Register </h2><br>
+                    <form id="form"><!--May have to change 'search' to 'index'-->
+                        <fieldset>
+                            <label for="fname">Full Name:</label><br>
+                            <input id="fname" type="text" name="fname" autocomplete="off" required=""><br><br>
+                        </fieldset>
+                        <fieldset>
+                            <label for="email">e-mail:</label><br>
+                            <input id="email" type="email" name="email" autocomplete="off" required=""><br><br>
+                        </fieldset>
+                        <fieldset>
+                            <label for="dname">Username:</label><br>
+                            <input id="dname" type="text" name="dname" autocomplete="off" required=""><br><br>
+                        </fieldset>
+                        <fieldset>
+                            <label for="passwd">Password:</label><br>
+                            <input id="passwd" type="password" name="passwd" autocomplete="off" required=""><br><br><!--key = PASSWD-->
+                        </fieldset>
+                        <fieldset>
+                            <button type="submit" value="Submit" class="btn btn-primary">Register</button>
+                        </fieldset> 
+                    </form>
+                </div>               
+            </div>
+            <div class="col-md-5">
+                <img src="static/images/cover2.png" width="144%">
+            </div>
+            <div class="col-md-2">
+                <br>
+            </div>        
+        </div>
     </div>
+    <div class="row footer">
+        <div class="col-md-12"><br></div>        
+    </div>
+    <div class="row footer">
+        <div class="col-md-12"><br></div>        
+    </div>
+        
 {% endblock %}
 
 <!-- <div class="alert alert-primary" role="alert">
     Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken.
 </div> -->
+<!-- <form action="{{url_for('register')}}" method="POST"> -->

@@ -1,0 +1,29 @@
+// socket.on('announce message', data => {
+//     const li = document.createElement('li');
+//     li.innerHTML = `${data.message}, ${data.dname}, ${data.time}`;
+//     document.querySelector('#push').append(li);
+// });
+// socket.on('announce time', data => {
+//     var time = data.time; 
+// });
+// socket.on('announce dname', data => {
+//     var dname = data.dname; 
+// });
+
+// `Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">email</a> is already taken.`
+// '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' )
+
+#python channel function
+
+
+    dname = session["username"]
+    time = datetime.now()
+
+
+    # selection = {"message":message, "uname": uname, "time":time}
+    # emit("announce message", {"message": messages, "dname": dname, "time": time }, broadcast=True)
+    # emit("announce time", {"time":time}, broadcast=True)
+    # emit("announce dname", {"dname":dname}, broadcast=True)
+
+
+    # selection = data["selection"]

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{%  block title %} Flack : logout {% endblock %}
+{% block style %}
+    <script src="{{ url_for('static',filename='logout.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='logut_stl.css') }}">
+{% endblock %}
+{% block body %}
+    Logging you out...
+    See Ya!!!
+{% endblock%}

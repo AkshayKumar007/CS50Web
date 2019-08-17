@@ -1,9 +1,10 @@
-import os, requests, datetime
+import os, requests, threading, json
 
-from flask import Flask, render_template, request, session, url_for, redirect, jsonify
+from flask import Flask, render_template, request, session, url_for, redirect, jsonify, flash, send_from_directory
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from werkzeug.utils import secure_filename
 
 from flask_socketio import SocketIO, emit
 
@@ -15,23 +16,39 @@ if not os.getenv("DATABASE_URL"):
     raise RuntimeError("DATABASE_URL is not set")
 
 # Configure session to use filesystem
+#for file uploading
+UPLOAD_FOLDER = 'uploads/' # 'may' need to change
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 Session(app)
 
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-
-channel = dict() # to store channels and respective messages
-# 'C'hannel for passing to html(s)
+channels = {"#general":[]} # to store channels and respective messages
+# 'C'hannel for passing to DOMs
 
 @app.route("/")
 def index():
-    # if request.method == "GET":
+    # if 'username' in session:
+    #     return redirect(url_for('channel_list'))
     return render_template("index.html")
-    # elif request.method == "POST":
+
+@app.route("/login", methods=["POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        passwd = request.form.get("passwd")
+        if db.execute("SELECT * FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).rowcount == 1:
+            res = db.execute("SELECT dname FROM users1 WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
+            dname = [ row[0] for row in res ]
+            session['username'] = dname[0]
+            return jsonify({"message" : "success"})            
+        else:
+            return jsonify({"message" : "wrong"}) # goes to index.html
 
 
 @app.route("/register", methods = ["GET", "POST"])
@@ -39,97 +56,123 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
 
-    elif request.method == "POST":
+    else:
+    # if request.method == "POST":
         fname = request.form.get("fname")
         dname = request.form.get("dname")
         passwd = request.form.get("passwd")
         email = request.form.get("email")
-        if db.execute("SELECT * FROM users WHERE email = :email",{"email":email}).count == 0:
-            if db.execute("SELECT * FROM users WHERE dname = :dname",{"dname":dname}).count == 0:
-                db.execute("INSERT INTO users (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
+        if db.execute("SELECT * FROM users1 WHERE email = :email",{"email":email}).rowcount == 0:
+            if db.execute("SELECT * FROM users1 WHERE dname = :dname",{"dname":dname}).rowcount == 0:
+                db.execute("INSERT INTO users1 (fname, dname, passwd, email) VALUES (:fname, :dname, :passwd, :email)"\
                     ,{"fname":fname, "dname":dname, "passwd":passwd, "email":email})
-                return render_template("channel_list.html", dname = dname)
+                db.commit()
+                session['username'] = dname
+                return jsonify({"message" : "success"})
+                
             else:
                 return jsonify({"message" : "no_dname"})
-                #add js code for displayname taken
+         
         else:
             return jsonify({"message" : "no_mail"})
-            # add js code for user already exists
+           
 
-
-@app.route("/channel_list", methods = ["GET", "POST"])
+@app.route("/channel_list")
 def channel_list():
-    if request.method == "POST":
-        email = request.form.get("email")
-        passwd = request.form.get("passwd")
-        if db.execute("SELECT * FROM users WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd}).count == 1:
-            dname = db.execute("SELECT dname FROM users WHERE email = :email AND passwd = :passwd ",{"email":email, "passwd":passwd})
-            session[username] = dname
-            return render_template("channel_list.html", Channel = channel.keys())
-        else:
-            # goes to index.html
-            return jsonify({"message" : "wrong"}) #need to add js file for this.
-
-    elif request.method == "GET":
-        return render_template("channel_list.html", Channel = channel.keys())
+    # if request.method == "GET":
+    return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
     
 @app.route("/create_channel", methods=["POST"])
 def create_channel():
     if request.method == "POST":
         cname = request.form.get("cname")
-        if cname in channel:
+        if cname in channels:
             return jsonify({"message" : "exists"})
         else:
             # write statements as per our dictionary structure to add new channel
-            if channel.get(cname, None) == None:
-                channel[cname] = []
-            return render_template("channel_list.html", Channel = channel.keys())
+            if channels.get(cname, None) == None:#maybe redunadnt
+                if cname[0] != '#':
+                    cname = '#' + cname[:]
+                channels[cname] = []
+            return jsonify({"message" : "success"})
+        # , "dname" : session['username'], "Channel" : list(channels.keys())
+            # return render_template("channel_list.html", dname = session['username'], Channel = list(channels.keys()))
 
 
-@app.route("/channel/<string>:c", methods=["GET", "POST"])
-def channel(c):
+@app.route("/channel/<string:chnl>", methods=["GET", "POST"])
+def channel(chnl, response = None): #may need to remove this response
+    upload_file.chnl = chnl
+    vote.chnl = chnl #newly added after chrome-revelations
     if request.method == "GET":
-        if c in channel:
-            return render_template("channel.html", Channel = channel[c])
+        if chnl in channels:
+            res1 = db.execute("SELECT * FROM filedata WHERE channelname = :channelname", {"channelname": chnl}).fetchall()
+            if response == None:
+                return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = None)
+            else :
+                return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = response)
         
-    elif request.method == "POST":
-        message = request.form.get("message")
-        uname = session["username"]
-        time = datetime.now()
-        #update channel content using sockets
-        channel[c].append((message, uname, time))
-        
-
-@socketio.on("send message")
+@socketio.on('send messages')
 def vote(data):
-    # selection = data["selection"]
-    message = data["selection"]
-    uname = session["username"]
-    time = datetime.now()
-    selection = {"message":message, "uname": uname, "time":time}
-    emit("announce message", {"selection": selection}, broadcast=True)
+    messages = data['messages']
+    time = data['time']
+    dname = session["username"]
+    channels[vote.chnl].append((messages, dname, time))
+    emit('announce messages', {"messages": messages, "dname": dname, "time": time}, broadcast=True)
+    
+
+# for file upload feature
+
+# checks if file has valid extension
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route('/result/<string:results>', methods=['GET', 'POST'])
+def result(results):    
+    return render_template('result.html', message = results)
+
+
+@app.route('/upload_file', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part found')
+            # return redirect(url_for('result', results="fail"))
+            return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            # return redirect(url_for('result', results="fail"))
+            return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            extension_name = filename.rsplit('.', 1)[1].lower()
+            db.execute("INSERT INTO filedata (dname, filename, filetype, channelname) VALUES (:dname, :filename, :filetype, :channelname)"\
+                ,{ "dname": session['username'], "filename": filename, "filetype": extension_name, "channelname": upload_file.chnl })
+            db.commit()
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # return redirect(url_for('result', results="success"))
+            return redirect(url_for('channel', response="success", chnl = upload_file.chnl))
+
+
+# FOR DOWNLOAD
+@app.route('/uploads/<filename>')
+def uploads(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
 @app.route('/logout')
 def logout():
    # remove the username from the session if it is there
    session.pop('username', None)
-   return redirect(url_for('index'))
+   return render_template("logout.html")
 
 
-# channel(dict) => channel_names(string) => (message+dname+timestamp)(list of tuples)            
-
-#  channel _list alpha
-
-# if request.method == "POST":#from index
-#         temp = request.form.get("dname")
-#         if session.get(temp, None) == None:
-#             session["username"] = request.form.get("dname")
-#         return render_template("chnl_list.html", channel = channel.keys())
-    
-    
-#if request.method == "GET":#from register
-#   cname = request.form.get("cname")
-#       if cname in channel:
-#           pass
+if __name__ == "__main__":
+    socketio.run(app)

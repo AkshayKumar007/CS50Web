@@ -1,0 +1,29 @@
+.body {
+  margin-top: 30px;
+  padding: 30px; }
+
+.body > image {
+  float: right; }
+
+.separable > h1 {
+  display: inline-block;
+  color: #0f9d58;
+  font-weight: bolder; }
+
+.separable > h2 {
+  display: inline-block; }
+
+.separable > h5 {
+  color: #505050; }
+
+.registerBocx {
+  padding: 33px;
+  background-color: #dcf8c6;
+  border-radius: 30px;
+  color: #34a853;
+  font-weight: bold; }
+
+.footer {
+  background-color: #55ab55; }
+
+/*# sourceMappingURL=register_stl.css.map */

@@ -42,6 +42,9 @@ def register():
             db.execute("INSERT INTO users (fname, passwd, uname, email) VALUES (:fname, :passwd, :uname, :email)",
                 {"fname":fname, "passwd":passwd, "uname":uname, "email":email})
             db.commit()
+            res = (db.execute("SELECT * FROM users WHERE uname = :uname AND passwd = :passwd", {"uname":uname, "passwd":passwd})).fetchone()
+            search.u_id = res.id # function attribute
+            session["user_id"] = res.id
             return render_template("search.html")
         else:
             return render_template("error.html", message = " User already exists! ")

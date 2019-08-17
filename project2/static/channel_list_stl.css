@@ -1,0 +1,26 @@
+.body {
+  padding: 30px;
+  background-color: #ece5dd; }
+
+.cards {
+  background-color: #dcf8c6;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 30px;
+  border-color: #abee77; }
+
+.cards > h3 {
+  color: #660066; }
+
+.createBocx {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px; }
+
+.createBocx > h2 {
+  color: #25d366; }
+
+body {
+  background-color: #ece5dd; }
+
+/*# sourceMappingURL=channel_list_stl.css.map */

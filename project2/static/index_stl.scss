@@ -1,44 +1,38 @@
-
-.fill {
-    position: relative;
-    margin-top: 35px;
-  }
-  
-input {
-    display: block;
-    padding: 8px 12px;
-    width: 100%;
-    max-width: 300px;
-    border-radius: 5px;
-    border: 0;
+.body {
+    margin-top: 30px; 
+    padding: 30px;
+    color:#25d366;
+}
+.body > image {
+    float: right;
+}
+.seperable > h2 { 
+    display: inline-block;
+}
+.seperable > h5 { 
+    color: #505050;
+}
+.seperable > h1 {
+    display: inline-block;
+    color: #0f9d58;
+    font-weight: bolder;
+}
+.loginBocx{
+    padding: 33px;
+    background-color: #dcf8c6;
+    border-radius: 30px;
+    color: #34a853;
+    font-weight: bold;
 }
 
-label {
-    position: absolute;
-    font-weight: 600;
-    color: #777777;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    cursor: text;
-    user-select: none;
-    transition: 0.15s ease-in-out;
-}
-  
-input[data-empty="false"] + label,
-input:valid + label,
-input:focus + label {
-    top: -10px;
-    left: 0px;
-    font-size: 10px;
-    color: #ffffff;
+.footer {
+    background-color: #55ab55;
 }
 
-.seperable {
-    padding: 20px;
-}
+
+// .seperable {
+//     padding: 20px;
+// }
 
 // #0f9d58
 // #54b948

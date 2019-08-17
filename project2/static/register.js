@@ -1,38 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#form').onsubmit = () => {
+
         const request = new XMLHttpRequest();
-        const fname = document.querySelector('#fname').value;//change for variables in DOM
+
+        const fname = document.querySelector('#fname').value;
         const dname = document.querySelector('#dname').value;
         const email = document.querySelector('#email').value;
         const passwd = document.querySelector('#passwd').value;
+       
         request.open('POST', '/register');
         request.onload = () => {
-
-            // Extract JSON data from request
             const data = JSON.parse(request.responseText);
-
             if (data.message == "no_mail") {// check for white-spacing of curly braces
-                const contents = `Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">email</a> is already taken.`
-                document.querySelector('#result > alert').innerHTML = contents;
-            }
-            else if (data.message == "no_dname"){
-                const contents = `Error! Looks like <a href="{{ url_for('index') }}" class="alert-link">Display Name</a> is already taken.`
-                document.querySelector('#result > .alert').innerHTML = contents;
+                
+                const contents = '<div class="alert alert-primary" role="alert">Error! Looks like email is already taken."</div>';
+                
+                document.querySelector('#fname').value = "";
+                document.querySelector('#dname').value = "";
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
+
+                document.querySelector('#message').innerHTML = contents;
+
+            } else if (data.message == "no_dname") {
+                
+                const contents = '<div class="alert alert-primary" role="alert">Error! Looks like DName is already taken."</div>';
+
+                document.querySelector('#dname').value = "";
+                document.querySelector('#passwd').value = "";
+                                
+                document.querySelector('#message').innerHTML = contents;
+
+            } else if (data.message == "success") {
+                document.querySelector('#fname').value = "";
+                document.querySelector('#dname').value = "";
+                document.querySelector('#email').value = "";
+                document.querySelector('#passwd').value = "";
+                // request.open('GET', '/channel_list');// may break code
+                window.location.replace("/channel_list");
+                
             }
         }
-
-        // still incomplete
         const data = new FormData();
-        data.append('fname', fname);//change for variables you created
-        data.append('dname', fname);
-        data.append('email', fname);
-        data.append('passwd', fname);
-        // Send request
+        data.append('fname', fname); 
+        data.append('dname', dname);
+        data.append('email', email);
+        data.append('passwd', passwd);
+    
         request.send(data);
         return false;
     }
 });
+
 
 // function message(vars) {
     
