@@ -81,7 +81,7 @@
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         {% for message in messages %}
-                                {{ message }}
+                            {{ message }}
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
@@ -89,7 +89,6 @@
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">S.no</th>
                             <th scope="col">User</th>
                             <th scope="col">Filename</th>
                             <th scope="col">Filetype</th>
@@ -99,8 +98,7 @@
                     <tbody>
                         {% for res in res1 %}
                             <tr>
-                                <th scope="row"> {{ res.id }} </th>
-                                <td> {{ res.dname }} </td>
+                                <th scope="row"> {{ res.dname }} </th>
                                 <td> {{ res.filename }} </td>
                                 <td> {{ res.filetype }} </td>
                                 <td> <a href="{{ url_for('uploads', filename=res.filename) }}"> View </a>
