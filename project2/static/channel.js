@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // converting # to %23 for routing
     var chnl = document.querySelector('#channel_name').innerHTML;
     if( chnl[0] === '#') {
         chnl = '%23' + chnl.slice(1,chnl.length);
     }
-    localStorage.setItem('channel_name', chnl);//working
+    localStorage.setItem('channel_name', chnl); // store in web-socket
     
     // Connect to websocket
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);

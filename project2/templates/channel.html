@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='channel_stl.css') }}">
 {% endblock %}
 
-{%  block body %}
+{% block body %}
     <nav class="navbar navbar-light" style="background-color: #0f9d58;">
         <a class="navbar-brand" href="#" style="color: white; font-weight: bolder;">FLACK.</a>
         <a class="nav-link" href="#" style="color: white;" id="channel_name">{{ channel_name }}</a> <!-- working -->
@@ -35,8 +35,8 @@
             <div class="col-md-12"><br></div>        
         </div>
         <div class="row">
-            <div class="col-md-2 side-panel"><p></p></div>
-            <div class="col-md-8">
+            <div class="col-md-1 side-panel"><p></p></div>
+            <div class="col-md-6">
                 {% for c in Channel %}
                     <div class="bocx">
                         {{ c[0] }}<br>
@@ -45,18 +45,77 @@
                     </div> <br>
                 {% endfor %}
                 
-                <div class="push">
+                <div class="push"> <!-- socket.io messages -->
                     <!-- filled by JavaScript -->
                 </div>
+
                 <nav class="navbar fixed-bottom navbar-light" style="background-color: #ece5dd;">
                     <form id="form" class="form-inline">
-                        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-                        <input id="messages" type="text" name="messages" class="form-control mr-sm-2" aria-label="Search">
+                        <input id="messages" autocomplete="off" type="text" name="messages" class="form-control mr-sm-2" aria-label="Search">
                         <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <!--for file upload-->
+                    <form id="fileform" class="form-inline" enctype=multipart/form-data action="{{ url_for('upload_file') }}" method="POST"><!--  -->
+                        <fieldset>
+                            <label for="file">Select a file:</label>
+                            <input name="file" type="file">
+                        </fieldset>
+                        <fieldset>
+                            <input type=submit value=Upload>
+                        </fieldset>
+                    </form>
+                    <!--for file upload-->
                 </nav>        
             </div>
-            <div class="col-md-2 side-panel"><p></p></div>
+            <div class="col-md-5 media_files">
+                <h2> Channel Media </h2>
+                <!-- for response after file upload -->
+                {% if response is none %}
+
+                {% else %}
+                    <div class="alert alert-primary" role="alert">
+                        {{ response }}
+                    </div>
+                {% endif %}
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                                {{ message }}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">S.no</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Filename</th>
+                            <th scope="col">Filetype</th>
+                            <th scope="col">Download</th>
+                        </tr>
+                    </thead>  
+                    <tbody>
+                        {% for res in res1 %}
+                            <tr>
+                                <th scope="row"> {{ res.id }} </th>
+                                <td> {{ res.dname }} </td>
+                                <td> {{ res.filename }} </td>
+                                <td> {{ res.filetype }} </td>
+                                <td> <a href="{{ url_for('uploads', filename=res.filename) }}"> View </a>
+                                </td> 
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td>
+                                    No files 
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 {% endblock %}

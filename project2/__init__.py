@@ -1,10 +1,10 @@
 import os, requests, threading, json
 
-from flask import Flask, render_template, request, session, url_for, redirect, jsonify
+from flask import Flask, render_template, request, session, url_for, redirect, jsonify, flash, send_from_directory
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from datetime import datetime as dt
+from werkzeug.utils import secure_filename
 
 from flask_socketio import SocketIO, emit
 
@@ -16,8 +16,12 @@ if not os.getenv("DATABASE_URL"):
     raise RuntimeError("DATABASE_URL is not set")
 
 # Configure session to use filesystem
+#for file uploading
+UPLOAD_FOLDER = 'uploads/' # 'may' need to change
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 Session(app)
 
 # Set up database
@@ -97,12 +101,16 @@ def create_channel():
 
 
 @app.route("/channel/<string:chnl>", methods=["GET", "POST"])
-def channel(chnl):
+def channel(chnl, response = None): #may need to remove this response
+    upload_file.chnl = chnl
     vote.chnl = chnl #newly added after chrome-revelations
     if request.method == "GET":
         if chnl in channels:
-            return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl)
-     
+            res1 = db.execute("SELECT * FROM filedata WHERE channelname = :channelname", {"channelname": chnl}).fetchall()
+            if response == None:
+                return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = None)
+            else :
+                return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = response)
         
 @socketio.on('send messages')
 def vote(data):
@@ -112,6 +120,52 @@ def vote(data):
     channels[vote.chnl].append((messages, dname, time))
     emit('announce messages', {"messages": messages, "dname": dname, "time": time}, broadcast=True)
     
+
+# for file upload feature
+
+# checks if file has valid extension
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route('/result/<string:results>', methods=['GET', 'POST'])
+def result(results):    
+    return render_template('result.html', message = results)
+
+
+@app.route('/upload_file', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part found')
+            # return redirect(url_for('result', results="fail"))
+            return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            # return redirect(url_for('result', results="fail"))
+            return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            extension_name = filename.rsplit('.', 1)[1].lower()
+            db.execute("INSERT INTO filedata (dname, filename, filetype, channelname) VALUES (:dname, :filename, :filetype, :channelname)"\
+                ,{ "dname": session['username'], "filename": filename, "filetype": extension_name, "channelname": upload_file.chnl })
+            db.commit()
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # return redirect(url_for('result', results="success"))
+            return redirect(url_for('channel', response="success", chnl = upload_file.chnl))
+
+
+# FOR DOWNLOAD
+@app.route('/uploads/<filename>')
+def uploads(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
 
 @app.route('/logout')
 def logout():
