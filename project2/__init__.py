@@ -103,10 +103,7 @@ def channel(chnl, response = None): #may need to remove this response
     if request.method == "GET":
         if chnl in channels:
             res1 = db.execute("SELECT * FROM filedata WHERE channelname = :channelname", {"channelname": chnl}).fetchall()
-            if response == None:
-                return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = None)
-            else :
-                return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = response)
+            return render_template("channel.html", dname = session['username'], Channel = channels[chnl], channel_name = chnl, res1 = res1, response = response)
      
         
 @socketio.on('send messages')
@@ -132,13 +129,13 @@ def upload_file():
         # check if the post request has the file part
         if 'file' not in request.files:
             # flash('No file part found')
-            return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+            return redirect(url_for('channel', chnl = upload_file.chnl, response="fail"))
         file = request.files['file']
         # if user does not select file, browser also
         # submit an empty part without filename
         if file.filename == '':
             # flash('No selected file')
-            return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+            return redirect(url_for('channel', chnl = upload_file.chnl,  response="fail"))
 
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
@@ -147,9 +144,9 @@ def upload_file():
                 ,{ "dname": session['username'], "filename": filename, "filetype": extension_name, "channelname": upload_file.chnl })
             db.commit()
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('channel', response="success", chnl = upload_file.chnl))
-            
-        return redirect(url_for('channel', response="fail", chnl = upload_file.chnl))
+            return redirect(url_for('channel', chnl = upload_file.chnl, response="success"))
+
+        return redirect(url_for('channel', chnl = upload_file.chnl, response="fail"))
 
 
 # for viewing
