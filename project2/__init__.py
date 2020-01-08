@@ -97,7 +97,7 @@ def create_channel():
 
 
 @app.route("/channel/<string:chnl>", methods=["GET"])
-def channel(chnl, response = None): #may need to remove this response
+def channel(chnl, response = False): #may need to remove this response
     upload_file.chnl = chnl
     vote.chnl = chnl 
     if request.method == "GET":

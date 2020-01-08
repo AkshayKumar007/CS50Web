@@ -1,0 +1,275 @@
+Paraceratherium is an extinct genus of hornless rhinoceros, and one of the largest terrestrial mammals that has ever existed. It lived from the early to late Oligocene epoch (34–23 million years ago); its remains have been found across Eurasia between China and the Balkans. It is classified as a member of the hyracodont subfamily Indricotheriinae. Paraceratherium means "near the hornless beast", in reference to Aceratherium, the genus in which the type species P. bugtiense was originally placed.
+
+The exact size of Paraceratherium is unknown because of the incompleteness of the fossils. The shoulder height was about 4.8 metres (15.7 feet), and the length about 7.4 metres (24.3 feet). Its weight is estimated to have been about 15 to 20 tonnes (33,000 to 44,000 lb). The long neck supported a skull that was about 1.3 metres (4.3 ft) long. It had large, tusk-like incisors and a nasal incision that suggests it had a prehensile upper lip or proboscis (trunk). The legs were long and pillar-like. The lifestyle of Paraceratherium may have been similar to that of modern large mammals such as the elephants and extant rhinoceroses. Because of its size, it would have had few predators and a slow rate of reproduction. It was a browser, eating mainly leaves, soft plants, and shrubs. It lived in habitats ranging from arid deserts with a few scattered trees to subtropical forests. The reasons for the animal's extinction are unknown, but various factors have been proposed.
+
+The taxonomy of the genus and the species within has a long and complicated history. Other genera of Oligocene indricotheres, such as Baluchitherium, Indricotherium, and Pristinotherium, have been named, but no complete specimens exist, making comparison and classification difficult. Most modern scientists consider these genera to be junior synonyms of Paraceratherium, and it is thought to contain at least three discernible species; P. bugtiense, P. transouralicum, and P. huangheense. The most completely-known species is P. transouralicum, so most reconstructions of the genus are based on it. Differences between P. bugtiense and P. transouralicum may be due to sexual dimorphism, which would make them the same species.
+Contents
+
+    1 Taxonomy
+        1.1 Species and synonyms
+        1.2 Evolution
+    2 Description
+        2.1 Skull
+        2.2 Postcranial skeleton
+    3 Palaeobiology
+        3.1 Diet and feeding
+    4 Distribution and habitat
+    5 Extinction
+    6 References
+    7 Bibliography
+
+Taxonomy
+1911 illustration of the down-turned lower jaw of P. bugtiense, which was the basis for its separation from the genus Aceratherium
+
+The taxonomic history of Paraceratherium is complex due to the fragmentary nature of the known fossils and because western, Soviet, and Chinese scientists worked in isolation from each other for much of the 20th century and published research mainly in their respective languages.[1] Scientists from different parts of the world tried to compare their finds to get a more complete picture of these animals, but were hindered by politics and wars.[2] The opposing taxonomic tendencies of "lumping and splitting" have also contributed to the problem.[3] Inaccurate geological dating previously led scientists to believe various geological formations that are now known to be contemporaneous were of different ages. Many genera were named on the basis of subtle differences in molar tooth characteristics—features that vary within populations of other rhinoceros taxa—and are therefore not accepted by most scientists for distinguishing species.[4]
+
+Early discoveries of indricotheres were made through various colonial links to Asia.[2] The first known indricothere fossils were collected from Balochistan (in modern-day Pakistan) in 1846 by a soldier named Vickary, but these fragments were unidentifiable at the time.[5] The first fossils now recognised as Paraceratherium were discovered by the British geologist Guy Ellcock Pilgrim in Balochistan in 1907–1908. His material consisted of an upper jaw, lower teeth, and the back of a jaw. The fossils were collected in the Chitarwata Formation of Dera Bugti, where Pilgrim had previously been exploring. In 1908, he used the fossils as basis for a new species of the extinct rhinoceros genus Aceratherium; A. bugtiense. Aceratherium was by then a wastebasket taxon; it included several unrelated species of hornless rhinoceros, many of which have since been moved to other genera.[1][6] Fossil incisors that Pilgrim had previously assigned to the unrelated genus Bugtitherium were later shown to belong to the new species.[7]
+1913 illustration of an astragalus bone, foot bone, atlas bone, and various vertebrae, which were part of the basis for Baluchitherium osborni, now a synonym of P. bugtiense
+
+In 1910, more partial fossils were discovered in Dera Bugti during an expedition by the British palaeontologist Clive Forster-Cooper. Based on these remains, Foster-Cooper moved A. bugtiense to the new genus Paraceratherium, meaning "near the hornless beast", in reference to Aceratherium.[1][8] His rationale for this reclassification was the species' distinctly down-turned lower tusks.[7] In 1913, Forster-Cooper named a new genus and species, Thaumastotherium ("wonderful beast") osborni, based on larger fossils from the same excavations (some of which he had earlier suggested to belong to male P. bugtiense), but he renamed the genus Baluchitherium later that year because the former name was preoccupied, as it had already been used for a hemipteran insect.[9][10][8] The fossils of Baluchitherium were so fragmentary that Foster-Cooper was only able to identify it as a kind of odd-toed ungulate, but he mentioned the possibility of confusion with Paraceratherium.[11] The American palaeontologist Henry Fairfield Osborn, after which B. osborni was named, suggested it may have been a titanothere.[2]
+
+A Russian Academy of Sciences expedition later found fossils in the Aral Formation near the Aral Sea in Kazakhstan; it was the most complete indricothere skeleton known, but it lacked the skull. In 1916, based on these remains, Aleksei Alekseeivich Borissiak erected the genus Indricotherium named for a mythological monster, the "Indrik beast". He did not assign a species name, I. asiaticum, until 1923, but the Russian palaeontologist Maria Pavlova had already named it I. transouralicum in 1922.[1][12] Also in 1923, Borissiak created the subfamily Indricotheriinae to include the various related forms known by then.[13]
+
+In 1922, the American explorer Roy Chapman Andrews led a well documented expedition to China and Mongolia sponsored by the American Museum of Natural History. Various indricothere remains were found in formations of the Mongolian Gobi Desert, including the legs of a specimen standing in an upright position, indicating that it had died while trapped in quicksand, as well as a very complete skull. These remains became the basis of Baluchitherium grangeri, named by Osborn in 1923.[14][15]
+
+In 2017, a new species, P. huangheense, was named by the Chinese palaeontologist Yong-Xiang Li and colleagues based on jaw elements from the Hanjiajing Formation in the Gansu Province of China; the name refers to the nearby Huanghe River.[16] A multitude of other species and genus names—mostly based on differences in size, snout shape, and front tooth arrangement—have been coined for various indricothere remains. Fossils attributable to Paraceratherium continue to be discovered across Eurasia, but the political situation in Pakistan has become too unstable for further excavations to occur there.[5]
+Species and synonyms
+Preparator with P. transouralicum skull (AMNH 18650), formerly assigned to B. grangeri, American Museum of Natural History
+
+In 1922 Forster-Cooper named the new species Metamynodon bugtiensis based on a palate and other fragments from Dera Bugti, thought to belong to a giant member of that genus. These fossils are now thought to have belonged to an aberrant Paraceratherium bugtiense specimen that lacked the M3 molar.[17][18] In 1936, the American palaeontologists Walter Granger and William K. Gregory proposed that Forster-Cooper's Baluchitherium osborni was likely a junior synonym (an invalid name for the same taxon) of Paraceratherium bugtiense, because these specimens were collected at the same locality and were possibly part of the same morphologically variable species.[19] The American palaeontologist William Diller Matthew and Forster-Cooper himself had expressed similar doubts few years earlier. Although it had already been declared a junior synonym, the genus name Baluchitherium remained popular in various media because of the publicity surrounding Osborn's B. grangeri.[3][20]
+1911 illustration of a P. bugtiense incisor and part of a mandible
+
+In 1989, the American palaeontologists Spencer G. Lucas and Jay C. Sobus published a revision of indricothere taxa, which is followed by most western scientists today. They concluded that Paraceratherium, as the oldest name, was the only valid indricothere genus from the Oligocene, and contained four valid species, P. bugtiense, P. transouralicum (originally in Indricotherium), P. prohorovi (originally in Aralotherium), and P. orgosensis (originally in Dzungariotherium). They considered most other names to be junior synonyms of those taxa, or as dubious names, based on remains too fragmentary to identify properly. By analysing alleged differences between named genera and species, Lucas and Sobus found that these most likely represented variation within populations, and that most features were indistinguishable between specimens, as had been pointed out in the 1930s. The fact that the single skull assigned to P. transouralicum or Indricotherium was domed, while others were flat at the top was attributed to sexual dimorphism; it is possible that P. bugtiense fossils represent the female, while P. transouralicum represents the male of the same species.[3][21][22]
+
+According to Lucas and Sobus, the type species P. bugtiense from the late Oligocene of Pakistan includes junior synonyms such as B. osborni and P. zhajremensis. P. transouralicum from the late Oligocene of Kazakhstan, Mongolia, and northern China includes B. grangeri and I. minus.[21] In 2013, the American palaeontologist Donald Prothero suggested that P. orgosensis may be distinct enough to warrant its original genus name Dzungariotherium, though its exact position requires evaluation. P. prohorovi from the late Oligocene of Kazakhstan may be too incomplete for its position to be resolved in relation to the other species; the same applies to proposed species such as I. intermedium and P. tienshanensis, as well as the genus Benaratherium.[3][21] Though the genus name Indricotherium is now a junior synonym of Paraceratherium, the subfamily name Indricotheriinae is still in use because genus name synonymy does not affect the names of higher level taxa that are derived from these. Members of the subfamily are therefore still commonly referred to as indricotheres.[23]
+
+In contrast to the revision by Lucas and Sobus, a 2003 paper by Chinese palaeontologist Jie Ye and colleagues suggested that Indricotherium and Dzungariotherium were valid genera, and that P. prohorovi did not belong in Paraceratherium. They also recognised the validity of species such as P. lipidus, P. tienshanensis, and P. sui.[24] A 2004 paper by Chinese palaeontologist Tao Deng and colleagues also recognised three distinct genera.[25] Some western writers have similarly used names otherwise considered invalid since the 1989 revision, but without providing detailed analysis and justification.[3]
+Evolution
+Comparison of the front teeth of Metamynodon (Amynodontidae), Hyracodon (Hyracodontidae), Paraceratherium (Indricotheriinae), and Trigonias (Rhinocerotidae)
+
+The superfamily Rhinocerotoidea, which includes modern rhinoceroses, can be traced back to the early Eocene—about 50 million years ago—with early precursors such as Hyrachyus. Rhinocerotoidea contains three families; Amynodontidae, Rhinocerotidae ("true rhinoceroses"), and Hyracodontidae. The diversity within the rhinoceros group was much larger in prehistoric times; they ranged from dog-sized to the size of Paraceratherium. There were long-legged, cursorial forms adapted for running and squat, semi aquatic forms. Most species did not have horns. Rhinoceros fossils are identified as such mainly by characteristics of their teeth, which is the part of the animals most likely to be preserved. The upper molars of most rhinoceroses have a pi-shaped (π) pattern on the crown, and each lower molar has paired L-shapes. Various skull features are also used for identification of fossil rhinoceroses.[26]
+
+The subfamily Indricotheriinae, to which Paraceratherium belongs, was first classified as part of the family Hyracodontidae by the American palaeontologist Leonard B. Radinsky in 1966. Previously, they had been regarded as a subfamily within Rhinocerotidea, or even a full family, Indricotheriidae.[27] In a 1999 cladistic study of tapiromorphs, the American palaeontologist Luke Holbrook found indricotheres to be outside the hyracodontid clade, and wrote that they may not be a monophyletic (natural) grouping.[28] Radinsky's scheme is the prevalent hypothesis today. The hyracodont family contains long-legged members adapted to running, such as Hyracodon, and were distinguished by incisor characteristics. Indricotheres are distinguished from other hyracodonts by their larger size and the derived structure of their snouts, incisors and canines. The earliest known indricothere is the dog-sized Forstercooperia from the middle and late Eocene of western North America and Asia. The cow-sized Juxia is known from the middle Eocene; by the late Eocene the genus Urtinotherium of Asia had almost reached the size of Paraceratherium.[21][26] Paraceratherium itself lived in Eurasia during the Oligocene period, 23 to 34 million years ago.[29] The genus is distinguished from other indricotheres by its large size, nasal incision that would have supported a muscular snout, and its down-turned premaxillae.[21] It had also lost the second and third lower incisors, lower canines, and lower first premolars.[26]
+Skull and neck of Juxia, a cow sized relative from the middle Eocene, Palaeozoological Museum of China
+
+The cladogram below follows the 1989 analysis of Indricotheriinae by Lucas and Sobus, and shows the closest relatives of Paraceratherium:[21]
+ Hyracodontidae 	
+  	
+
+ Triplopodinae
+ 
+ Indricotheriinae 	
+  	
+
+ Forstercooperia
+ 
+  	
+  	
+
+ Juxia
+ 
+  	
+  	
+
+ Urtinotherium
+ 
+  	
+
+ Paraceratherium
+ 
+ 
+ 
+ 
+ 
+
+Lucas and colleagues had reached similar conclusions in a previous 1981 analysis of Forstercooperia, wherein they still retained Paraceratherium and Indricotherium as separate genera.[30] In 2016, the Chinese researchers Haibing Wang and colleagues used the name Paraceratheriidae for the family and paraceratheriine for the subfamily, and placed them outside of Hyracodontidae.[31]
+Description
+Estimated size of P. transouralicum (olive green) compared with that of humans, other large mammals, and the dinosaur Patagotitan
+
+Paraceratherium is one of the largest known land mammals that have ever existed, but its exact size is unclear because of the lack of complete specimens.[4] Its total body length was estimated as 8.7 m (28.5 ft) from front to back by Granger and Gregory in 1936, and 7.4 m (24.3 ft) by the Soviet palaeontologist Vera Gromova in 1959, but the former estimate is now considered exaggerated. The weight of Paraceratherium was similar to that of some extinct proboscideans, with the largest complete skeleton known belonging to the steppe mammoth (Mammuthus trogontherii).[32][33] Despite its roughly equivalent mass, Paraceratherium might have been taller than any proboscidean.[4] Its shoulder height was estimated as 5.25 m (17.2 ft) at the shoulders by Granger and Gregory, but 4.8 m (15.7 ft) by the American palaeontologist Gregory S. Paul in 1997.[34] The neck was estimated at 2 to 2.5 m (6.6 to 8.2 ft) long by the palaeontologists Michael P. Taylor and Mathew J. Wedel in 2013.[35]
+Life restoration of P. transouralicum
+
+Early estimates of 30 tonnes (66,000 lb) are now considered exaggerated; it may have been in the range of 15 to 20 tonnes (33,000 to 44,000 lb) at maximum, and as low as 11 tonnes (24,000 lb) on average. Calculations have mainly been based on fossils of P. transouralicum because this species is known from the most complete remains.[4] Estimates have been based on skull, teeth, and limb bone measurements, but the known bone elements are represented by individuals of different sizes, so all skeletal reconstructions are composite extrapolations, resulting in several weight ranges.[32][36]
+
+There are no indications of the colour and skin texture of the animal because no skin impressions or mummies are known. Most life restorations show the creature's skin as thick, folded, grey, and hairless, based on modern rhinoceroses. Because hair retains body heat, modern large mammals such as elephants and rhinoceroses are largely hairless. Prothero has proposed that, contrary to most depictions, Paraceratherium had large elephant-like ears that it used for thermoregulation. The ears of elephants enlarge the body's surface area and are filled with blood vessels, making the dissipation of excess heat easier. According to Prothero, this would have been true for Paraceratherium, as indicated by the robust bones around the ear openings.[4] The palaeontologists Pierre-Olivier Antoine and Darren Naish have expressed scepticism towards this idea.[37][38]
+Skull
+P. transouralicum skull, AMNH
+
+The largest skulls of Paraceratherium are around 1.3 metres (4.3 ft) long, 33 to 38 centimetres (13 to 15 in) at the back of the skull, and 61 centimetres (24 in) wide across by the zygomatic arches. Paraceratherium had a long forehead, which was smooth and lacked the roughened area that serves as attachment point for the horns of other rhinoceroses. The bones above the nasal region are long and the nasal incision goes far into the skull. This indicates that Paraceratherium had a prehensile upper lip similar to that of the black rhinoceros and the Indian rhinoceros, or a short proboscis (trunk) as in tapirs. The back of the skull was low and narrow, without the large lambdoid crests at the top and along the sagittal crest, which are otherwise found in horned and tusked animals that need strong muscles to push and fight. It also had a deep pit for the attachment of nuchal ligaments, which hold up the skull automatically. The occipital condyle was very wide and Paraceratherium appears to have had large, strong neck muscles, which allowed it to sweep its head strongly downwards while foraging from branches.[4] One skull of P. transouralicum has a domed forehead, whereas others have flat foreheads, possibly because of sexual dimorphism.[21] A brain endocast of P. transouralicum shows it was only 8 percent of the skull length, while the brain of the Indian rhinoceros is 17.7 percent of its skull length.[19]
+Upper molars of P. transouralicum, Musee d'Histoire Naturelle, Paris
+
+The species of Paraceratherium are mainly discernible through skull characteristics. P. bugtiense had features such as relatively slender maxillae and premaxillae, shallow skull roofs, mastoid-paroccipital processes that were relatively thin and placed back on the skull, a lambdoid crest, which extended less back, and an occipital condyle with a horizontal orientation, which it shared with Dzungariotherium. P. transouralicum had robust maxillae and premaxillae, upturned zygomata, domed frontal bones, thick mastoid-paroccipital processes, a lambdoid crest that extended back, and occipital condyles with a vertical orientation.[3] P. huangheense differed from P. bugtiense only in the anatomy of the rear portion of the jaw, as well as its larger size.[16]
+
+Unlike those of most primitive rhinoceroses, the front teeth of Paraceratherium were reduced to a single pair of incisors in either jaw, which were large and conical, and have been described as tusks. The upper incisors pointed downwards; the lower ones were shorter and pointed forwards. Among known rhinoceroses, this arrangement is unique to Paraceratherium and the related Urtinotherium. The incisors may have been larger in males. The canine teeth otherwise found behind the incisors were lost. The incisors were separated from the row of cheek teeth by a large diastema (gap).[4] This feature is found in mammals where the incisors and cheek teeth have different specialisations.[26] The upper molars, except for the third upper molar that was V-shaped, had a pi-shaped (π) pattern and a reduced metastyle. The premolars only partially formed the pi pattern. Each molar was the size of a human fist; among mammals they were only exceeded in size by proboscideans, though they were small relative to the size of the skull. The lower cheek teeth were L-shaped, which is typical of rhinoceroses.[4]
+Postcranial skeleton
+Hind foot of P. transouralicum, AMNH
+
+No complete set of vertebrae and ribs of Paraceratherium has yet been found and the tail is completely unknown. The atlas and axis vertebrae of the neck were wider than in most modern rhinoceroses, with space for strong ligaments and muscles that would be needed to hold up the large head. The rest of the vertebrae were also very wide, and had large zygapophyses with much room for muscles, tendons, ligaments, and nerves, to support the head, neck, and spine. The neural spines were long and formed a long "hump" along the back, where neck muscles and nuchal ligaments for holding up the skull were attached. The ribs were similar to those of modern rhinoceroses, but the ribcage would have looked smaller in proportion to the long legs and large bodies, because modern rhinoceroses are comparatively short-limbed. The last vertebra of the lower back was fused to the sacrum, a feature found in advanced rhinoceroses.[4] Like sauropod dinosaurs, Paraceratherium had pleurocoel-like openings (hollow parts of the bone) in their pre-sacral vertebrae, which probably helped to lighten the skeleton.[39]
+1923 skeletal reconstructions of B. grangeri (now P. transouralicum), in rhinoceros-like and slender versions
+
+The limbs were large and robust to support the animal's large weight, and were in some ways similar to and convergent with those of elephants and sauropod dinosaurs with their likewise graviportal (heavy and slow moving) builds. Unlike such animals, which tend to lengthen the upper limb bones while shortening, fusing and compressing the lower limb, hand, and foot bones, Paraceratherium had short upper limb bones and long hand and foot bones—except for the disc-shaped phalanges—similar to the running rhinoceroses from which they descended. Some foot bones were almost 50 centimetres (20 in) long. The thigh bones typically measured 1.5 m (4.9 ft), a size only exceeded by those of some elephants and dinosaurs. The thigh bones were pillar-like and much thicker and more robust than those of other rhinoceroses, and the three trochanters on the sides were much reduced, as this robustness diminished their importance. The limbs were held in a column-like posture instead of bent, as in smaller animals, which reduced the need for large limb muscles.[4] The front limbs had three toes.[40]
+
+Due to the fragmentary nature of known Paraceratherium fossils, the skeleton of the animal has been reconstructed in several different ways since its discovery.[41] In 1923, Matthew supervised an artist to draw a reconstruction of the skeleton based on the even less complete P. transouralicum specimens known by then, using the proportions of a modern rhinoceros as a guide.[42] The result was too squat and compact, and Osborn had a more slender version drawn later the same year. Some later life restorations have made the animal too slender, with little regard to the underlying skeleton.[4] Gromova published a more complete skeletal reconstruction in 1959, based on the P. transouralicum skeleton from the Aral Formation, but this also lacked several neck vertebrae.[43]
+Palaeobiology
+Foraging herd of P. transouralicum, by Elizabeth Rungius Fulda, 1923
+
+The British zoologist Robert M. Alexander suggested in 1988 that overheating may have been a serious problem in Paraceratherium due to its size.[44] According to Prothero, the best living analogues for Paraceratherium may be large mammals such as elephants, rhinoceroses and hippopotamuses. To aid in thermoregulation, these animals cool down during the day by resting in the shade or by wallowing in water and mud. They also forage and move mainly at night. Because of its large size, Paraceratherium would not have been able to run and move quickly, but they would have been able to cross large distances, which would be necessary in an environment with a scarcity of food. They may therefore have had large home ranges and have been migratory.[4] Prothero suggests that animals as big as indricotheres would need very large home ranges or territories of at least 1,000 square kilometres (250,000 acres) and that, because of a scarcity of resources, there would have been little room in Asia for many populations or a multitude of nearly identical species and genera. This principle is called competitive exclusion; it is used to explain how the black rhinoceros (a browser) and white rhinoceros (a grazer) exploit different niches in the same areas of Africa.[3]
+
+Most terrestrial predators in their habitat were no bigger than a modern wolf and were not a threat to Paraceratherium.[29] Adult individuals would be too large for any land predators to attack, but the young would have been vulnerable. Bite marks on bones from the Bugti beds indicate that even adults may have been preyed on by 10-to-11-metre (33 to 36 ft)-long crocodiles, Crocodylus bugtiensis. As in elephants, the gestation period of Paraceratherium may have been lengthy and individuals may have had long lifespans.[4] Paraceratherium may have lived in small herds, perhaps consisting of females and their calves, which they protected from predators.[29] It has been proposed that 20 tonnes (44,000 lb) may be the maximum weight possible for land mammals, and Paraceratherium was close to this limit.[45] The reasons mammals cannot reach the much larger size of sauropod dinosaurs are unknown. The reason may be ecological instead of biomechanical, and perhaps related to reproduction strategies.[32] Movement, sound, and other behaviours seen in CGI documentaries such as "Walking With Beasts" are entirely conjectural.[4]
+Diet and feeding
+P. transouralicum skull illustration
+
+The simple, low-crowned teeth indicate that Paraceratherium was a browser with a diet consisting of relatively soft leaves and shrubs. Later rhinoceroses were grazers, with high-crowned teeth because their diets contained grit that quickly wore down their teeth. Studies of mesowear on Paraceratherium teeth confirm the creatures had a diet of soft leaves; microwear studies have yet to be conducted.[4] Isotope analysis shows that Paraceratherium fed chiefly on C3 plants, which are mainly leaves.[46][47] Like its perissodactyl relatives, the horses, tapirs, and other rhinoceroses, Paraceratherium would have been a hindgut fermenter; it would extract relatively little nutrition from its food and would have to eat large volumes to survive. Like other large herbivores, Paraceratherium would have had a large digestive tract.[4]
+
+Granger and Gregory argued that the large incisors were used for defence or for loosening shrubs by moving the neck downwards, thereby acting as picks and levers.[19] Tapirs use their proboscis to wrap around branches while stripping off bark with the front teeth; this ability would have been helpful to Paraceratherium. Some Russian authors suggested that the tusks were probably used for breaking twigs, stripping bark and bending high branches and that, because species from the early Oligocene had larger tusks than later ones, they probably had a more bark than leaf based diet. Since the species involved are now known to have been contemporaneous, and the differences in tusks are now thought to be sexually dimorphic, the latter idea is not accepted today.[4] Herds of Paraceratherium may have migrated while continuously foraging from tall trees, which smaller mammals could not reach.[29] Osborn suggested that its mode of foraging would have been similar to that of the high-browsing giraffe and okapi, rather than to modern rhinoceroses, whose heads are carried close to the ground.[42]
+Distribution and habitat
+Locations of fossil finds
+
+Remains assignable to Paraceratherium have been found in early to late Oligocene (34–23 million years ago) formations across Eurasia, in modern-day China, Mongolia, India, Pakistan, Kazakhstan, Georgia, Turkey, Romania, Bulgaria, and the Balkans.[5] Their distribution may be correlated with the palaeogeographic development of the Alpine-Himalayan mountain belt. The range of Paraceratherium finds implies that they inhabited a continuous landmass with a similar environment across it, but this is contradicted by palaeogeographic maps that show this area had various marine barriers, so the genus was successful in being widely distributed despite this.[48] The fauna which coexisted with Paraceratherium included other rhinoceroses, artiodactyls, rodents, beardogs, weasels, hyaenodonts, nimravids and cats.[29]
+Restoration of a P. transouralicum pair, with two Hyaenodon below
+
+The habitat of Paraceratherium appears to have varied across its range, based on the types of geological formations it has been found in.[29] The Hsanda Gol Formation of Mongolia represents an arid desert basin, and the environment is thought to have had few tall trees and limited brush cover, as the fauna consisted mainly of animals that fed from tree tops or close to the ground.[49] A study of fossil pollen showed that much of China was woody shrubland, with plants such as saltbush, mormon tea (Ephedra), and nitre bush (Nitraria), all adapted to arid environments. Trees were rare, and concentrated near groundwater.[50] The parts of China where Paraceratherium lived had dry lakes and abundant sand dunes, and the most common plant fossils are leaves of the desert-adapted Palibinia. Trees in Mongolia and China included birch, elm, oaks, and other deciduous trees, while Siberia and Kazakhstan also had walnut trees.[29] Dera Bugti in Pakistan had dry, temperate to subtropical forest.[46]
+Extinction
+
+The reasons Paraceratherium became extinct after surviving for about 11 million years are unknown, but it is unlikely that there was a single cause.[29] Theories include climate change, low reproduction rate, and invasion by gomphothere proboscideans from Africa in the late Oligocene (between 28 and 23 million years ago). Gomphotheres may have been able to considerably change the habitats they entered, in the same way that African elephants do today, by destroying trees and turning woodland into grassland. Once their food source became scarce and their numbers dwindled, Paraceratherium populations would have become more vulnerable to other threats.[51] Large predators like Hyainailurus and Amphicyon also entered Asia from Africa during the early Miocene (between 23 and 16 million years ago); these may have predated Paraceratherium calves. Other herbivores also invaded Asia during this time.[29]
+References
+
+Prothero, 2013. pp. 17–34
+Manias, C. (2014). "Building Baluchitherium and Indricotherium: Imperial and International Networks in Early-Twentieth Century Paleontology" (PDF). Journal of the History of Biology (Submitted manuscript). 48 (2): 237–78. doi:10.1007/s10739-014-9395-y. PMID 25537636.
+Prothero, 2013. pp. 67–86
+Prothero, 2013. pp. 87–106
+Prothero, 2013. pp. 35–52
+Pilgrim, G. E. (1910). "Notices of new mammalian genera and species from the Tertiaries of India". Records of the Geological Survey of India. 40 (1): 63–71.
+Cooper, C. F. (1924). "On the Skull and Dentition of Paraceratherium bugtiense: a genus of aberrant rhinoceroses from the Lower Miocene deposits of Dera Bugti". Philosophical Transactions of the Royal Society B: Biological Sciences. 212 (391–401): 369–394. Bibcode:1924RSPTB.212..369F. doi:10.1098/rstb.1924.0009.
+Forster-Cooper, C. (1911). "LXXVIII.—Paraceratherium bugtiense, a new genus of Rhinocerotidae from the Bugti Hills of Baluchistan.—Preliminary notice". Annals and Magazine of Natural History. Series 8. 8 (48): 711–716. doi:10.1080/00222931108693085. Archived from the original on 20 November 2015. Retrieved 28 August 2015.
+Forster-Cooper, C. (1913). "XLIV.— Thaumastotherium osborni, a new genus of perissodactyles from the Upper Oligocene deposits of the Bugti hills of Baluchistan. —Preliminary notice". Annals and Magazine of Natural History. Series 8. 12 (70): 376–381. doi:10.1080/00222931308693412. Archived from the original on 7 October 2015. Retrieved 28 August 2015.
+Forster-Cooper, C. (1913). "Correction of generic name". Annals and Magazine of Natural History. Series 8. 12 (71): 504. doi:10.1080/00222931308693431. Archived from the original on 12 August 2018. Retrieved 13 January 2018.
+Forster-Cooper, C. (1923). "Baluchitherium osborni (? syn. Indricotherium turgaicum, Borrissyak)". Philosophical Transactions of the Royal Society of London. 212 (391–401): 35–66. doi:10.1098/rstb.1924.0002. JSTOR 92060. Archived from the original on 3 March 2016. Retrieved 28 August 2015.
+Pavlova, M. (1922). "Indricotherium transouralicum n. sp. provenant du district de Tourgay". Bulletin de la Societe des Naturalistes de Moscou, Section Geologique (in French). 31: 95–116.
+Borissiak, A. A. (1924). "Über die Unterfamilie Indricotheriinae Boriss. = Baluchitheriinae Osb". Zentralblatt für Mineralogie, Geologie und Paläontologie (in German). 18: 571–575.
+Prothero, 2013. pp. 1–16
+Osborn, H. F. (1923). "The extinct giant rhinoceros Baluchitherium of Western and Central Asia". Natural History. 3. 23: 208–228. Archived from the original on 9 March 2016. Retrieved 8 September 2014.
+Yong-Xiang Li; Yun-Xiang Zhang; Ji Li; Zhi-Chao Li; Kun Xie (2017). "New fossils of paraceratheres (Perissodactyla, Mammalia) from the Early Oligocene of the Lanzhou Basin, Gansu Province, China". Vertebrata PalAsiatica. 55 (4): 367–381. doi:10.19615/j.cnki.1000-3118.170922. Archived from the original on 12 October 2017. Retrieved 11 October 2017.
+Forster-Cooper, C. (1922). "LXXIV.—Metamynodon bugtiensis, sp. n., from the Dera Bugti deposits of Baluchistan.—preliminary notice". Annals and Magazine of Natural History. 9 (53): 617–620. doi:10.1080/00222932208632717.
+Tissier, J.; Becker, D.; Codrea, V.; Costeur, L.; Fărcaş, C.; Solomon, A.; Venczel, M.; Maridet, O.; Smith, T. (2018). "New data on Amynodontidae (Mammalia, Perissodactyla) from Eastern Europe: Phylogenetic and palaeobiogeographic implications around the Eocene-Oligocene transition". PLOS ONE. 13 (4): e0193774. Bibcode:2018PLoSO..1393774T. doi:10.1371/journal.pone.0193774. PMC 5905962. PMID 29668673.
+Granger, W.; Gregory, W. K. (1936). "Further notes on the gigantic extinct rhinoceros, Baluchitherium, from the Oligocene of Mongolia". Bulletin of the American Museum of Natural History. 72: 1–73. hdl:2246/363.
+Forster-Cooper, C. (1934). "The Extinct Rhinoceroses of Baluchistan". Philosophical Transactions of the Royal Society B: Biological Sciences. 223 (494–508): 569–616. Bibcode:1934RSPTB.223..569F. doi:10.1098/rstb.1934.0013.
+Lucas, S. G.; Sobus, J. C. (1989), "The Systematics of Indricotheres", in Prothero, D. R.; Schoch, R. M. (eds.), The Evolution of Perissodactyls, New York, New York & Oxford, England: Oxford University Press, pp. 358–378, ISBN 978-0-19-506039-3, OCLC 19268080
+Zhan-Xiang, Q. (1973). "A new genus of giant rhinoceros from oligocene of Dzungaria, Sinkang" (PDF). Vertebrata PalAsiatica. 11 (in Chinese and English). 2: 182–191. Archived (PDF) from the original on 22 October 2014. Retrieved 22 October 2014.
+Antoine, P. O.; Karadenizli, L.; Saraç, G. E.; Sen, S. (2008). "A giant rhinocerotoid (Mammalia, Perissodactyla) from the Late Oligocene of north-central Anatolia (Turkey)". Zoological Journal of the Linnean Society. 152 (3): 581–592. doi:10.1111/j.1096-3642.2007.00366.x.
+Ye, Y.; J., Meng; Yu, W. W. (2003). "Discovery of Paraceratherium in the northern Junggar Basin of Xinjiang" (PDF). Vertebrata PalAsiatica (in Chinese and English). 41: 220–229. Archived (PDF) from the original on 3 March 2016. Retrieved 22 October 2014.
+Qui, Z.-X.; Wang, B.-Y.; Deng, T. (2004). "Indricotheres (Perissodactyla, Mammalia) from Oligocene in Linxia Basin, Gansu, China" (PDF). Vertebrata PalAsiatica (in Chinese and English). 42 (3): 177–192. Archived from the original (PDF) on 22 October 2014. Retrieved 22 October 2014.
+Prothero, 2013. pp. 53–66
+Radinsky, L. B. (1966). "The Families of the Rhinocerotoidea (Mammalia, Perissodactyla)". Journal of Mammalogy. 47 (4): 631–639. doi:10.2307/1377893. JSTOR 1377893.
+Holbrook, L. (1999). "The Phylogeny and Classification of Tapiromorph Perissodactyls (Mammalia)". Cladistics. 15 (3): 331–350. doi:10.1006/clad.1999.0107.
+Prothero, 2013. pp. 107–121
+Lucas, S.G.; Schoch, R.M.; Manning, E. (1981). "The Systematics of Forstercooperia, a Middle to Late Eocene Hyracodontid (Perissodactyla: Rhinocerotoidea) from Asia and Western North America". Journal of Paleontology. 55 (4): 826–841. JSTOR 1304430.
+Wang, H.; Bai, B.; Meng, J.; Wang, Y. (2016). "Earliest known unequivocal rhinocerotoid sheds new light on the origin of Giant Rhinos and phylogeny of early rhinocerotoids". Scientific Reports. 6 (1): 39607. Bibcode:2016NatSR...639607W. doi:10.1038/srep39607. PMC 5175171. PMID 28000789.
+Fortelius, M.; Kappelman, J. (1993). "The largest land mammal ever imagined". Zoological Journal of the Linnean Society. 108: 85–101. doi:10.1111/j.1096-3642.1993.tb02560.x.
+Larramendi, A. (2016). "Shoulder height, body mass and shape of proboscideans" (PDF). Acta Palaeontologica Polonica. 61. doi:10.4202/app.00136.2014. Archived (PDF) from the original on 24 August 2016.
+Paul, G. S. (1997). "Dinosaur models: The good, the bad, and using them to estimate the mass of dinosaurs" (PDF). Dinofest International Proceedings: 129–142. Archived (PDF) from the original on 4 March 2016. Retrieved 3 January 2015.
+Taylor, M. P.; Wedel, M. J. (2013). "Why sauropods had long necks; and why giraffes have short necks". PeerJ. 1: e36. doi:10.7717/peerj.36. PMC 3628838. PMID 23638372.
+Tsubamoto, T. (2012). "Estimating body mass from the astragalus in mammals". Acta Palaeontologica Polonica: 259–265. doi:10.4202/app.2011.0067.
+Antoine, P. O. (2014). "There were giants upon the earth in those days (Book Review)". Palaeovertebrata. 38: 1–3. doi:10.18563/pv.38.1.e4. Archived from the original on 12 November 2014. Retrieved 20 October 2014.
+Naish, D. (29 June 2013). "Tet Zoo Bookshelf: van Grouw's Unfeathered Bird, Bodio's Eternity of Eagles, Witton's Pterosaurs, Van Duzer's Sea Monsters on Medieval and Renaissance Maps!". blogs.scientificamerican.com/tetrapod-zoology. Archived from the original on 6 October 2014. Retrieved 5 October 2014.
+Sander, P. M.; Christian, A.; Clauss, M.; Fechner, R.; Gee, C. T.; Griebeler, E. M.; Gunga, H. C.; Hummel, J. R.; Mallison, H.; Perry, S. F.; Preuschoft, H.; Rauhut, O. W. M.; Remes, K.; Tütken, T.; Wings, O.; Witzel, U. (2011). "Biology of the sauropod dinosaurs: The evolution of gigantism". Biological Reviews. 86 (1): 117–55. doi:10.1111/j.1469-185X.2010.00137.x. PMC 3045712. PMID 21251189.
+Antoine, P. O.; Ibrahim Shah, S. M.; Cheema, I. U.; Crochet, J. Y.; Franceschi, D. D.; Marivaux, L.; Métais, G. G.; Welcomme, J. L. (2004). "New remains of the baluchithere Paraceratherium bugtiense from the Late/latest Oligocene of the Bugti hills, Balochistan, Pakistan". Journal of Asian Earth Sciences. 24 (1): 71–77. Bibcode:2004JAESc..24...71A. doi:10.1016/j.jaes.2003.09.005.
+Granger, W.; Gregory, W. K. (1935). "A revised restoration of the skeleton of Baluchitherium, gigantic fossil rhinoceros of Central Asia". American Museum Novitates. 787: 1–3. hdl:2246/2123.
+Osborn, H. F. (1923). "Baluchitherium grangeri, a giant hornless rhinoceros from Mongolia". American Museum Novitates. 78: 1–15. hdl:2246/3262.
+Gromova, V. L. (1959). "Gigantskie nosorogi". Trudy Paleontology Institut Akademii Nauk SSSR (in Russian). 71: 154–156.
+Alexander, R. M. (1998). "All-time giants: the largest animals and their problems". Palaeontology. 41 (6): 1231–1245. Archived from the original on 27 September 2016. Retrieved 1 March 2016.
+Clauss, M.; Frey, R.; Kiefer, B.; Lechner-Doll, M.; Loehlein, W.; Polster, C.; Rössner, G. E.; Streich, W. J. (2003). "The maximum attainable body size of herbivorous mammals: Morphophysiological constraints on foregut, and adaptations of hindgut fermenters" (PDF). Oecologia (Submitted manuscript). 136 (1): 14–27. Bibcode:2003Oecol.136...14C. doi:10.1007/s00442-003-1254-z. PMID 12712314. Archived (PDF) from the original on 8 June 2019. Retrieved 6 August 2018.
+Martin, C.; Bentaleb, I.; Antoine, P. -O. (2011). "Pakistan mammal tooth stable isotopes show paleoclimatic and paleoenvironmental changes since the early Oligocene". Palaeogeography, Palaeoclimatology, Palaeoecology. 311 (1–2): 19–29. Bibcode:2011PPP...311...19M. doi:10.1016/j.palaeo.2011.07.010.
+Wang, Y.; Deng, T. (2005). "A 25 m.y. Isotopic record of paleodiet and environmental change from fossil mammals and paleosols from the NE margin of the Tibetan Plateau". Earth and Planetary Science Letters. 236 (1–2): 322–338. Bibcode:2005E&PSL.236..322W. doi:10.1016/j.epsl.2005.05.006.
+Sen, S.; Antoine, P. O.; Varol, B.; Ayyildiz, T.; Sözeri, K. (2011). "Giant rhinoceros Paraceratherium and other vertebrates from Oligocene and middle Miocene deposits of the Kağızman-Tuzluca Basin, Eastern Turkey". Naturwissenschaften. 98 (5): 407–423. Bibcode:2011NW.....98..407S. doi:10.1007/s00114-011-0786-z. PMID 21465174.
+Meng, J.; McKenna, M. C. (1998). "Faunal turnovers of Palaeogene mammals from the Mongolian Plateau". Nature. 394 (6691): 364–367. Bibcode:1998Natur.394..364M. doi:10.1038/28603.
+Leopold, E. B.; Liu, G.; Clay-Poole, S. (1992), "Low-Biomass Vegetation in the Oligocene?", in Prothero, D. R.; Berggren, W.A. (eds.), Eocene-Oligocene Climatic and Biotic Evolution, Princeton: Princeton University Press, pp. 399–420, ISBN 978-0-691-02542-1
+
+    Putshkov, P. V. (2001). ""Proboscidean agent" of some Tertiary megafaunal extinctions". Terra Degli Elefanti Congresso Internazionale: The World of Elephants: 133–136.
+
+Bibliography
+	Wikimedia Commons has media related to Paraceratherium.
+
+    iconPaleontology portal
+
+    Prothero, D. (2013). Rhinoceros Giants: The Palaeobiology of Indricotheres. Indiana: Indiana University Press. ISBN 978-0-253-00819-0.
+
+Taxon identifiers	
+
+    Wikidata: Q311212 BioLib: 416754 EoL: 4528284 Fossilworks: 43161 GBIF: 4830663 IRMNG: 1030336 uBio: 4635272
+
+Categories:
+
+    Oligocene rhinocerosesAquitanian genus extinctionsPrehistoric mammal generaRupelian genus first appearancesHyracodontsFossil taxa described in 1911Taxa named by Clive Forster-Cooper
+
+Navigation menu
+
+    Not logged in
+    Talk
+    Contributions
+    Create account
+    Log in
+
+    Article
+    Talk
+
+    Read
+    Edit
+    View history
+
+Search
+
+    Main page
+    Contents
+    Featured content
+    Current events
+    Random article
+    Donate to Wikipedia
+    Wikipedia store
+
+Interaction
+
+    Help
+    About Wikipedia
+    Community portal
+    Recent changes
+    Contact page
+
+Tools
+
+    What links here
+    Related changes
+    Upload file
+    Special pages
+    Permanent link
+    Page information
+    Wikidata item
+    Cite this page
+
+In other projects
+
+    Wikimedia Commons
+
+Print/export
+
+    Create a book
+    Download as PDF
+    Printable version
+
+Languages
+
+    العربية
+    Català
+    Español
+    Français
+    Bahasa Indonesia
+    Polski
+    Português
+    Русский
+    中文
+
+Edit links
+
+    This page was last edited on 17 August 2019, at 11:04 (UTC).
+    Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+

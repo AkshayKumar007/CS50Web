@@ -70,12 +70,12 @@
             <div class="col-md-5 media_files">
                 <h2> Channel Media </h2>
                 <!-- for response after file upload -->
-                {% if response is none %}
-                    <br>
-                {% else %}
-                    <div class="alert alert-primary" role="alert">
+                {% if response %}
+                <div class="alert alert-primary" role="alert">
                         {{ response }}
                     </div>
+                {% else %}
+                    <br>
                 {% endif %}
 
                 <table class="table table-bordered table-hover">

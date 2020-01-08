@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = JSON.parse(request.responseText);
             if (data.message == "no_mail") {// check for white-spacing of curly braces
                 
-                const contents = '<div class="alert alert-primary" role="alert">Error! Looks like email is already taken."</div>';
+                const contents = '<div class="alert alert-primary" role="alert">Error! Looks like email already exists."</div>';
                 
                 document.querySelector('#fname').value = "";
                 document.querySelector('#dname').value = "";

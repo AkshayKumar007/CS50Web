@@ -1,0 +1,1 @@
+An ordered set is a set such that the order in which the objects appear in the set is significant. An ordered set N of integers is said to be a special set if for every element X of the set, the set does not contain the element X + 1.You are given an integer N. Determine the number of special sets whose largest element is not greater than N.
