@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'login_auth.apps.LoginAuthConfig',
     'orders.apps.OrdersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # name of directory is staticfiles 
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFileStorage'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
